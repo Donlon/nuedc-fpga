@@ -2,50 +2,52 @@
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 TLS
 #  -string -flagsOSRD
-preplace port gpio -pg 1 -lvl 7 -x 1880 -y 140 -defaultsOSRD
-preplace port HCLK -pg 1 -lvl 0 -x -670 -y -130 -defaultsOSRD
-preplace port clk_locked -pg 1 -lvl 0 -x -670 -y 0 -defaultsOSRD
-preplace port ext_reset_n -pg 1 -lvl 0 -x -670 -y -60 -defaultsOSRD
-preplace port TDI -pg 1 -lvl 0 -x -670 -y 530 -defaultsOSRD
-preplace port SWCLKTCK -pg 1 -lvl 0 -x -670 -y 490 -defaultsOSRD
-preplace port TDO -pg 1 -lvl 0 -x -670 -y 550 -defaultsOSRD -left
-preplace port TDOEN_n -pg 1 -lvl 0 -x -670 -y 570 -defaultsOSRD -left
-preplace port SWDO -pg 1 -lvl 0 -x -670 -y 590 -defaultsOSRD -left
-preplace port SWDOEN -pg 1 -lvl 0 -x -670 -y 610 -defaultsOSRD -left
-preplace port SWDITMS -pg 1 -lvl 0 -x -670 -y 510 -defaultsOSRD
+preplace port gpio -pg 1 -lvl 7 -x 1700 -y 140 -defaultsOSRD
+preplace port hclk -pg 1 -lvl 0 -x -680 -y -130 -defaultsOSRD
+preplace port clk_locked -pg 1 -lvl 0 -x -680 -y 0 -defaultsOSRD
+preplace port ext_reset_n -pg 1 -lvl 0 -x -680 -y -60 -defaultsOSRD
+preplace port TDI -pg 1 -lvl 0 -x -680 -y 530 -defaultsOSRD
+preplace port SWCLKTCK -pg 1 -lvl 0 -x -680 -y 490 -defaultsOSRD
+preplace port TDO -pg 1 -lvl 0 -x -680 -y 550 -defaultsOSRD -left
+preplace port TDOEN_n -pg 1 -lvl 0 -x -680 -y 570 -defaultsOSRD -left
+preplace port SWDO -pg 1 -lvl 0 -x -680 -y 590 -defaultsOSRD -left
+preplace port SWDOEN -pg 1 -lvl 0 -x -680 -y 610 -defaultsOSRD -left
+preplace port SWDITMS -pg 1 -lvl 0 -x -680 -y 510 -defaultsOSRD
 preplace inst CORTEXM3_AXI_0 -pg 1 -lvl 3 -x 460 -y 210 -defaultsOSRD
-preplace inst proc_sys_reset_0 -pg 1 -lvl 1 -x -460 -y -40 -defaultsOSRD
-preplace inst util_vector_logic_0 -pg 1 -lvl 2 -x -90 -y 190 -defaultsOSRD
-preplace inst xlconstant_0 -pg 1 -lvl 2 -x -90 -y 90 -defaultsOSRD
-preplace inst axi_interconnect_0 -pg 1 -lvl 4 -x 870 -y 140 -defaultsOSRD
-preplace inst axi_interconnect_1 -pg 1 -lvl 4 -x 870 -y 410 -defaultsOSRD
-preplace inst axi_gpio_0 -pg 1 -lvl 5 -x 1190 -y 150 -defaultsOSRD
-preplace inst blk_mem_gen_0 -pg 1 -lvl 6 -x 1450 -y 420 -defaultsOSRD
-preplace inst axi_bram_ctrl_0 -pg 1 -lvl 5 -x 1190 -y 420 -defaultsOSRD
-preplace netloc HCLK_1 1 0 5 -650J -140 N -140 70 -30 720 -20 1030
-preplace netloc proc_sys_reset_0_mb_reset 1 1 1 -280 -80n
-preplace netloc util_vector_logic_0_Res 1 2 1 70 110n
-preplace netloc xlconstant_0_dout 1 2 1 60 90n
-preplace netloc M01_ARESETN_1 1 1 3 N -20 N -20 700
-preplace netloc clk_locked_1 1 0 1 N 0
-preplace netloc ext_reset_n_1 1 0 1 N -60
-preplace netloc proc_sys_reset_0_peripheral_aresetn 1 1 4 NJ 0 N 0 NJ 0 1020
+preplace inst proc_sys_reset_0 -pg 1 -lvl 1 -x -460 -y -60 -defaultsOSRD
+preplace inst util_vector_logic_0 -pg 1 -lvl 2 -x -90 -y -80 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 2 -x -90 -y 110 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 4 -x 970 -y 140 -defaultsOSRD
+preplace inst axi_interconnect_1 -pg 1 -lvl 4 -x 970 -y 410 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 5 -x 1295 -y 150 -defaultsOSRD
+preplace inst axi_bram_ctrl_0 -pg 1 -lvl 5 -x 1295 -y 420 -defaultsOSRD
+preplace inst xlconstant_1 -pg 1 -lvl 1 -x -460 -y 180 -defaultsOSRD
+preplace inst blk_mem_gen_0 -pg 1 -lvl 6 -x 1565 -y 420 -defaultsOSRD
+preplace netloc HCLK_1 1 0 5 -660J -160 N -160 80 0 720 0 1120
+preplace netloc util_vector_logic_0_Res 1 2 1 70 -80n
+preplace netloc xlconstant_0_dout 1 2 1 60 110n
+preplace netloc M01_ARESETN_1 1 1 3 -270 -20 N -20 700
+preplace netloc clk_locked_1 1 0 1 -660 -20n
+preplace netloc ext_reset_n_1 1 0 1 -660 -80n
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 1 4 -280J -10 N -10 NJ -10 1130
 preplace netloc TDI_1 1 0 3 NJ 530 NJ 530 90
-preplace netloc SWCLKTCK_1 1 0 3 NJ 490 NJ 490 60
+preplace netloc SWCLKTCK_1 1 0 3 NJ 490 NJ 490 70
 preplace netloc CORTEXM3_AXI_0_TDO 1 0 4 N 550 N 550 N 550 670
 preplace netloc CORTEXM3_AXI_0_nTDOEN 1 0 4 N 570 N 570 N 570 660
 preplace netloc CORTEXM3_AXI_0_SWDO 1 0 4 N 590 N 590 N 590 690
 preplace netloc CORTEXM3_AXI_0_SWDOEN 1 0 4 N 610 N 610 N 610 680
 preplace netloc SWDITMS_1 1 0 3 NJ 510 NJ 510 80
-preplace netloc axi_gpio_0_ip2intc_irpt 1 2 4 80 -10 NJ -10 NJ -10 1330
+preplace netloc axi_gpio_0_ip2intc_irpt 1 2 4 90 -30 NJ -30 NJ -30 1440
+preplace netloc proc_sys_reset_0_mb_reset 1 1 1 -270 -100n
+preplace netloc xlconstant_1_dout 1 1 2 N 180 60
 preplace netloc CORTEXM3_AXI_0_CM3_SYS_AXI3 1 3 1 N 60
 preplace netloc CORTEXM3_AXI_0_CM3_CODE_AXI3 1 3 1 710 80n
 preplace netloc axi_gpio_0_GPIO 1 5 2 N 140 N
 preplace netloc axi_interconnect_0_M00_AXI 1 4 1 N 130
-preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 5 1 N 420
 preplace netloc axi_interconnect_1_M00_AXI 1 4 1 N 400
-levelinfo -pg 1 -670 -460 -90 460 870 1190 1450 1880
-pagesize -pg 1 -db -bbox -sgen -810 -250 1960 810
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 5 1 N 420
+levelinfo -pg 1 -680 -460 -90 460 970 1295 1565 1700
+pagesize -pg 1 -db -bbox -sgen -820 -250 1780 810
 "
 }
 0

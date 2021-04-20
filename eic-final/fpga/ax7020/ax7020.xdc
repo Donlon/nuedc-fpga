@@ -2,10 +2,10 @@ set_property CFGBVS VCCO [current_design]
 set_property CONFIG_VOLTAGE 3.3 [current_design]
 
 #####          clocks                 #####
-set_property -dict {PACKAGE_PIN U18 IOSTANDARD LVCMOS33} [get_ports clk_50MHz]
-create_clock -period 20.000 -name sys_clk_pin -add [get_ports clk_50MHz]
+set_property -dict {PACKAGE_PIN U18 IOSTANDARD LVCMOS33} [get_ports clk_50M]
+create_clock -period 20.000 -name sys_clk_pin -add [get_ports clk_50M]
 set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets TCK_IBUF]
-set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets TCK_IBUF_BUFG]
+#set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets TCK_IBUF_BUFG]
 
 #####          external reset pins    #####
 set_property PACKAGE_PIN N15 [get_ports ext_reset_n]

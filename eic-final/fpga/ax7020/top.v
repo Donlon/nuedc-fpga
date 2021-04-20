@@ -26,7 +26,7 @@ module top(
     );
 
     procesor_system_top_wrapper u_ps_top(
-        .HCLK(HCLK),
+        .hclk(hclk),
 
         // JTAG pins
         .SWCLKTCK(TCK),
