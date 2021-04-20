@@ -1,4 +1,9 @@
 *.cache
 *.hw
 *.ip_user_files
+*.runs
 *.sim
+*.srcs
+
+ip/*
+!ip/*.xci

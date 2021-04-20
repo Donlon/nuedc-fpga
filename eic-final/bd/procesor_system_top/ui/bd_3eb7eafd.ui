@@ -40,10 +40,10 @@ preplace netloc SWDITMS_1 1 0 3 NJ 510 NJ 510 80
 preplace netloc axi_gpio_0_ip2intc_irpt 1 2 4 80 -10 NJ -10 NJ -10 1330
 preplace netloc CORTEXM3_AXI_0_CM3_SYS_AXI3 1 3 1 N 60
 preplace netloc CORTEXM3_AXI_0_CM3_CODE_AXI3 1 3 1 710 80n
-preplace netloc axi_interconnect_0_M00_AXI 1 4 1 N 130
 preplace netloc axi_gpio_0_GPIO 1 5 2 N 140 N
-preplace netloc axi_interconnect_1_M00_AXI 1 4 1 N 400
+preplace netloc axi_interconnect_0_M00_AXI 1 4 1 N 130
 preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 5 1 N 420
+preplace netloc axi_interconnect_1_M00_AXI 1 4 1 N 400
 levelinfo -pg 1 -670 -460 -90 460 870 1190 1450 1880
 pagesize -pg 1 -db -bbox -sgen -810 -250 1960 810
 "
