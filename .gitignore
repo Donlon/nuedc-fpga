@@ -1,2 +1,7 @@
 .vscode/
 .idea/
+
+cmake-build*
+*/software/*/*.o
+*/software/*/*.a
+*/software/*/*.elf
