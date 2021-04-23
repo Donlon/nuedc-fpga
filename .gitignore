@@ -5,3 +5,4 @@ cmake-build*
 */software/*/*.o
 */software/*/*.a
 */software/*/*.elf
+/*/sdk
