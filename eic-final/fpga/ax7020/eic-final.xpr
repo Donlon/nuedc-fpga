@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="40" Path="/run/media/donlon/DATA/Works/EIC/nudec-fpga/eic-final/fpga/ax7020/eic-final.xpr">
+<Project Version="7" Minor="40" Path="/run/media/donlon/DATA/Works/EIC/nuedc-fpga/eic-final/fpga/ax7020/eic-final.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="3334ec247c024d7b94866359ada2a892"/>
@@ -32,20 +32,20 @@
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSANumComputeUnits" Val="60"/>
-    <Option Name="WTXSimLaunchSim" Val="0"/>
-    <Option Name="WTModelSimLaunchSim" Val="0"/>
+    <Option Name="WTXSimLaunchSim" Val="69"/>
+    <Option Name="WTModelSimLaunchSim" Val="2"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="5"/>
-    <Option Name="WTModelSimExportSim" Val="5"/>
-    <Option Name="WTQuestaExportSim" Val="5"/>
-    <Option Name="WTIesExportSim" Val="5"/>
-    <Option Name="WTVcsExportSim" Val="5"/>
-    <Option Name="WTRivieraExportSim" Val="5"/>
-    <Option Name="WTActivehdlExportSim" Val="5"/>
+    <Option Name="WTXSimExportSim" Val="7"/>
+    <Option Name="WTModelSimExportSim" Val="7"/>
+    <Option Name="WTQuestaExportSim" Val="7"/>
+    <Option Name="WTIesExportSim" Val="7"/>
+    <Option Name="WTVcsExportSim" Val="7"/>
+    <Option Name="WTRivieraExportSim" Val="7"/>
+    <Option Name="WTActivehdlExportSim" Val="7"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -66,29 +66,29 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="procesor_system_top.bd" FileRelPathName="ip/procesor_system_top_CORTEXM3_AXI_0_0/procesor_system_top_CORTEXM3_AXI_0_0.xci">
-          <Proxy FileSetName="procesor_system_top_CORTEXM3_AXI_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="procesor_system_top.bd" FileRelPathName="ip/procesor_system_top_proc_sys_reset_0_0/procesor_system_top_proc_sys_reset_0_0.xci">
-          <Proxy FileSetName="procesor_system_top_proc_sys_reset_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="procesor_system_top.bd" FileRelPathName="ip/procesor_system_top_util_vector_logic_0_0/procesor_system_top_util_vector_logic_0_0.xci">
-          <Proxy FileSetName="procesor_system_top_util_vector_logic_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="procesor_system_top.bd" FileRelPathName="ip/procesor_system_top_xbar_0/procesor_system_top_xbar_0.xci">
-          <Proxy FileSetName="procesor_system_top_xbar_0"/>
+        <CompFileExtendedInfo CompFileName="procesor_system_top.bd" FileRelPathName="ip/procesor_system_top_blk_mem_gen_0_1/procesor_system_top_blk_mem_gen_0_1.xci">
+          <Proxy FileSetName="procesor_system_top_blk_mem_gen_0_1"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="procesor_system_top.bd" FileRelPathName="ip/procesor_system_top_axi_bram_ctrl_0_0/procesor_system_top_axi_bram_ctrl_0_0.xci">
           <Proxy FileSetName="procesor_system_top_axi_bram_ctrl_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="procesor_system_top.bd" FileRelPathName="ip/procesor_system_top_xbar_1/procesor_system_top_xbar_1.xci">
-          <Proxy FileSetName="procesor_system_top_xbar_1"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="procesor_system_top.bd" FileRelPathName="ip/procesor_system_top_axi_gpio_0_0/procesor_system_top_axi_gpio_0_0.xci">
           <Proxy FileSetName="procesor_system_top_axi_gpio_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="procesor_system_top.bd" FileRelPathName="ip/procesor_system_top_blk_mem_gen_0_1/procesor_system_top_blk_mem_gen_0_1.xci">
-          <Proxy FileSetName="procesor_system_top_blk_mem_gen_0_1"/>
+        <CompFileExtendedInfo CompFileName="procesor_system_top.bd" FileRelPathName="ip/procesor_system_top_xbar_1/procesor_system_top_xbar_1.xci">
+          <Proxy FileSetName="procesor_system_top_xbar_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="procesor_system_top.bd" FileRelPathName="ip/procesor_system_top_xbar_0/procesor_system_top_xbar_0.xci">
+          <Proxy FileSetName="procesor_system_top_xbar_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="procesor_system_top.bd" FileRelPathName="ip/procesor_system_top_util_vector_logic_0_0/procesor_system_top_util_vector_logic_0_0.xci">
+          <Proxy FileSetName="procesor_system_top_util_vector_logic_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="procesor_system_top.bd" FileRelPathName="ip/procesor_system_top_proc_sys_reset_0_0/procesor_system_top_proc_sys_reset_0_0.xci">
+          <Proxy FileSetName="procesor_system_top_proc_sys_reset_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="procesor_system_top.bd" FileRelPathName="ip/procesor_system_top_CORTEXM3_AXI_0_0/procesor_system_top_CORTEXM3_AXI_0_0.xci">
+          <Proxy FileSetName="procesor_system_top_CORTEXM3_AXI_0_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PPRDIR/../../bd/procesor_system_top/hdl/procesor_system_top_wrapper.v">
@@ -125,9 +125,16 @@
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <Filter Type="Srcs"/>
+      <File Path="$PPRDIR/../../sim/top_tb.sv">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="top"/>
+        <Option Name="TopModule" Val="top_tb"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
@@ -311,9 +318,7 @@
     </Run>
     <Run Id="procesor_system_top_blk_mem_gen_0_1_synth_1" Type="Ft3:Synth" SrcSet="procesor_system_top_blk_mem_gen_0_1" Part="xc7z020clg400-2" ConstrsSet="procesor_system_top_blk_mem_gen_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/procesor_system_top_blk_mem_gen_0_1_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -467,9 +472,7 @@
     </Run>
     <Run Id="procesor_system_top_blk_mem_gen_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="procesor_system_top_blk_mem_gen_0_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="procesor_system_top_blk_mem_gen_0_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
