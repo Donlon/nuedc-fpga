@@ -9,3 +9,9 @@
 实现了电子信息杯决赛数字部分的功能的片上系统
 
 - [外设地址映射表](eic-final/memory-mapping.md)
+
+# IP 文档
+
+## axi-dac
+
+- [AxiDAC](ip/axidac.md)
