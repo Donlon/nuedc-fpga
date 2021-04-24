@@ -1,0 +1,22 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 TLS
+#  -string -flagsOSRD
+preplace port aclk -pg 1 -lvl 0 -x -50 -y -40 -defaultsOSRD
+preplace port aresetn -pg 1 -lvl 0 -x -50 -y -10 -defaultsOSRD
+preplace port dac_clk -pg 1 -lvl 4 -x 930 -y -90 -defaultsOSRD
+preplace portBus dac_data -pg 1 -lvl 4 -x 930 -y -50 -defaultsOSRD
+preplace inst axi_vip_m -pg 1 -lvl 1 -x 90 -y 40 -defaultsOSRD
+preplace inst axi_vip_s -pg 1 -lvl 3 -x 760 -y 70 -defaultsOSRD
+preplace inst axi_dac_0 -pg 1 -lvl 2 -x 390 -y 90 -defaultsOSRD
+preplace netloc Net 1 0 3 -30 -40 200 -30 570
+preplace netloc Net1 1 0 3 -20 -30 190 -20 550
+preplace netloc AXIDAC_v0_1_0_dac_clk 1 2 2 560 -90 N
+preplace netloc AXIDAC_v0_1_0_dac_data 1 2 2 540 -50 N
+preplace netloc axi_vip_m_M_AXI 1 1 1 N 40
+preplace netloc axi_dac_0_M_AXI 1 2 1 N 50
+levelinfo -pg 1 -50 90 390 760 930
+pagesize -pg 1 -db -bbox -sgen -160 -110 1080 470
+"
+}
+

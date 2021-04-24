@@ -1,0 +1,178 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x18D812A7EB119AA6",
+      "device": "xc7z020clg400-2",
+      "name": "axi_vip_1",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "axi_vip_m": "",
+      "axi_vip_s": "",
+      "axi_dac_0": ""
+    },
+    "ports": {
+      "aclk": {
+        "direction": "I"
+      },
+      "aresetn": {
+        "direction": "I"
+      },
+      "dac_clk": {
+        "type": "data",
+        "direction": "O",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "axi_vip_1_AXIDAC_v0_1_0_0_dac_clk",
+            "value_src": "default_prop"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default_prop"
+          },
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default_prop"
+          }
+        }
+      },
+      "dac_data": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      }
+    },
+    "components": {
+      "axi_vip_m": {
+        "vlnv": "xilinx.com:ip:axi_vip:1.1",
+        "xci_name": "axi_vip_1_axi_vip_m_0",
+        "parameters": {
+          "ADDR_WIDTH": {
+            "value": "32"
+          },
+          "DATA_WIDTH": {
+            "value": "32"
+          },
+          "HAS_BRESP": {
+            "value": "1"
+          },
+          "HAS_PROT": {
+            "value": "1"
+          },
+          "HAS_RRESP": {
+            "value": "1"
+          },
+          "HAS_WSTRB": {
+            "value": "1"
+          },
+          "INTERFACE_MODE": {
+            "value": "MASTER"
+          },
+          "PROTOCOL": {
+            "value": "AXI4LITE"
+          },
+          "READ_WRITE_MODE": {
+            "value": "READ_WRITE"
+          }
+        }
+      },
+      "axi_vip_s": {
+        "vlnv": "xilinx.com:ip:axi_vip:1.1",
+        "xci_name": "axi_vip_1_axi_vip_s_0",
+        "parameters": {
+          "INTERFACE_MODE": {
+            "value": "SLAVE"
+          }
+        }
+      },
+      "axi_dac_0": {
+        "vlnv": "Donlon:user:axi_dac:0.1",
+        "xci_name": "axi_vip_1_axi_dac_0_0"
+      }
+    },
+    "interface_nets": {
+      "axi_dac_0_M_AXI": {
+        "interface_ports": [
+          "axi_dac_0/M_AXI",
+          "axi_vip_s/S_AXI"
+        ]
+      },
+      "axi_vip_m_M_AXI": {
+        "interface_ports": [
+          "axi_vip_m/M_AXI",
+          "axi_dac_0/S_AXI"
+        ]
+      }
+    },
+    "nets": {
+      "Net": {
+        "ports": [
+          "aclk",
+          "axi_vip_s/aclk",
+          "axi_vip_m/aclk",
+          "axi_dac_0/m_axi_aclk",
+          "axi_dac_0/s_axi_aclk"
+        ]
+      },
+      "Net1": {
+        "ports": [
+          "aresetn",
+          "axi_vip_m/aresetn",
+          "axi_vip_s/aresetn",
+          "axi_dac_0/m_axi_aresetn",
+          "axi_dac_0/s_axi_aresetn"
+        ]
+      },
+      "AXIDAC_v0_1_0_dac_clk": {
+        "ports": [
+          "axi_dac_0/dac_clk",
+          "dac_clk"
+        ]
+      },
+      "AXIDAC_v0_1_0_dac_data": {
+        "ports": [
+          "axi_dac_0/dac_data",
+          "dac_data"
+        ]
+      }
+    },
+    "addressing": {
+      "/axi_vip_m": {
+        "address_spaces": {
+          "Master_AXI": {
+            "range": "4G",
+            "width": "32",
+            "segments": {
+              "SEG_axi_dac_0_S_AXI_reg": {
+                "address_block": "/axi_dac_0/S_AXI/S_AXI_reg",
+                "offset": "0x40000000",
+                "range": "64K"
+              }
+            }
+          }
+        }
+      },
+      "/axi_dac_0": {
+        "address_spaces": {
+          "M_AXI": {
+            "range": "4G",
+            "width": "32",
+            "segments": {
+              "SEG_axi_vip_s_Reg": {
+                "address_block": "/axi_vip_s/S_AXI/Reg",
+                "offset": "0x20000000",
+                "range": "64K"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
