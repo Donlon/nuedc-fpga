@@ -2,8 +2,11 @@
 *.hw
 *.ip_user_files
 *.runs
+*.sdk
 *.sim
 *.srcs
+*.tmp
 
 ip/*
 !ip/*.xci
+*.log
