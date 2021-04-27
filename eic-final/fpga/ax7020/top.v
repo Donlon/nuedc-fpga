@@ -2,13 +2,16 @@ module top(
     input clk_50M,
 
     input ext_reset_n,
-    inout [31:0] gpio,
+    inout [15:0] gpio,
 
     // JTAG pins
     input  TCK,
     input  TMS,
     input  TDI,
-    output TDO
+    output TDO,
+    
+    output [7:0] dac_data,
+    output       dac_clk
 );
     wire hclk;
     wire clk_16M;
@@ -39,6 +42,9 @@ module top(
 
         .clk_locked(clk_locked),
         .ext_reset_n(ext_reset_n),
-        .gpio_tri_io(gpio)
+        .gpio_tri_io(gpio),
+        
+        .dac_clk(dac_clk),
+        .dac_data(dac_data)
     );
 endmodule

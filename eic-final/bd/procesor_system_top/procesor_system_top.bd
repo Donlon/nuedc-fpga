@@ -1021,6 +1021,9 @@
           "C_ALL_OUTPUTS": {
             "value": "0"
           },
+          "C_GPIO_WIDTH": {
+            "value": "16"
+          },
           "C_INTERRUPT_PRESENT": {
             "value": "1"
           }
