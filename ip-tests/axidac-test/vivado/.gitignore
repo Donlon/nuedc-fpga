@@ -5,6 +5,7 @@
 *.sdk
 *.sim
 *.srcs
+*.tmp
 
 ip/*
 !ip/*.xci

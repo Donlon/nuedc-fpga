@@ -2,7 +2,12 @@
 
 import axi_vip_pkg::*;
 import axi_vip_1_axi_vip_m_0_pkg::*;
-// AXI_GPIO_Sim  axi_vip_0_0_pkg
+
+const int REG_CTL         = 32'h00;
+const int REG_DATA        = 32'h04;
+const int REG_SRC_ADDRESS = 32'h08;
+const int REG_SRC_SIZE    = 32'h0C;
+const int REG_CLK_DIV     = 32'h10;
 
 //////////////////////////////////////////////////////////////////////////////////
 // Test Bench Signals
@@ -17,12 +22,12 @@ bit [7:0] dac_data;
 
 //AXI4-Lite signals
 xil_axi_resp_t  resp;
-bit[31:0]  addr, data, base_addr = 32'h4000_0000, switch_state;
+bit [31:0] addr, data, base_addr = 32'h4000_0000;
 
 module tb_single_conv();
     wire       dac_clk;
     wire [7:0] dac_data;
-    
+
     axi_vip_1_wrapper u_axi_vip(
         .aclk(aclk),
         .aresetn(aresetn),
@@ -30,83 +35,71 @@ module tb_single_conv();
         .dac_data(dac_data)
     );
 
-    // Generate the clock : 50 MHz    
+    // Generate the clock : 50 MHz
     always #10ns aclk = ~aclk;
+
+    task axi_dac_read_reg (
+        input   bit [31:0]     offset,
+        output  bit [31:0]     data,
+        output  xil_axi_resp_t resp
+    );
+        master_agent.AXI4LITE_READ_BURST(base_addr + offset, 0, data, resp);
+    endtask : axi_dac_read_reg
+
+    task axi_dac_write_reg (
+        input   bit [31:0]     offset,
+        input   bit [31:0]     data,
+        output  xil_axi_resp_t resp
+    );
+        master_agent.AXI4LITE_WRITE_BURST(base_addr + offset, 0, data, resp);
+    endtask : axi_dac_write_reg
+
+    //////////////////////////////////////////////////////////////////////////////////
+    // The following part controls the AXI VIP.
+    // It follows the "Usefull Coding Guidelines and Examples" section from PG267
+    //////////////////////////////////////////////////////////////////////////////////
 
     //////////////////////////////////////////////////////////////////////////////////
     // Main Process
     //////////////////////////////////////////////////////////////////////////////////
-    //
     initial begin
-        //Assert the reset
+        // Assert the reset
         aresetn = 0;
         #200ns
         // Release the reset
         aresetn = 1;
     end
-    //
-    //////////////////////////////////////////////////////////////////////////////////
-    // The following part controls the AXI VIP. 
-    //It follows the "Usefull Coding Guidelines and Examples" section from PG267
-    //////////////////////////////////////////////////////////////////////////////////
-    //
+
     // Step 3 - Declare the agent for the master VIP
     axi_vip_1_axi_vip_m_0_mst_t      master_agent;
-    //
-    initial begin    
 
+    initial begin
         // Step 4 - Create a new agent
-        master_agent = new("master vip agent",u_axi_vip.axi_vip_1_i.axi_vip_m.inst.IF);
-        
+        master_agent = new("master vip agent", u_axi_vip.axi_vip_1_i.axi_vip_m.inst.IF);
+
         // Step 5 - Start the agent
         master_agent.start_master();
-        
-        //Wait for the reset to be released
-        wait (aresetn == 1'b1);
-        
-        //Send 0x1 to the AXI GPIO Data register 1
-        #500ns
-        addr = 0;
-        data = 1;
-        master_agent.AXI4LITE_WRITE_BURST(base_addr + addr, 0, data, resp);
-        
-        //Send 0x0 to the AXI GPIO Data register 1
-        #200ns
-        addr = 0;
-        data = 0;
-        master_agent.AXI4LITE_WRITE_BURST(base_addr + addr, 0, data, resp);
 
-        // // Switch in OFF position
-        // switch_1 = 0;
-        // Read the AXI GPIO Data register 2
-        #200ns
-        addr = 8;
-        master_agent.AXI4LITE_READ_BURST(base_addr + addr, 0, data, resp);
-        switch_state = data&1'h1;
-        if(switch_state == 0)
-            $display("switch 1 OFF");
-        else
-            $display("switch 1 ON");
-         
-        // // Switch in ON position
-        // switch_1 = 1;
-        // Read the AXI GPIO Data register 2
-        #200ns
-        addr = 8;
-        master_agent.AXI4LITE_READ_BURST(base_addr + addr, 0, data, resp);
-        switch_state = data&1'h1;
-        if(switch_state == 0)
-            $display("switch 1 OFF");
-        else
-            $display("switch 1 ON"); 
-            
+        // Wait for the reset to be released
+        wait (aresetn == 1'b1);
+
+        #50ns
+        axi_dac_read_reg(REG_CTL, data, resp);
+
+        #50ns
+        axi_dac_write_reg(REG_DATA, 'h5a, resp);
+
+        #50ns
+        axi_dac_write_reg(REG_DATA, 'h6c, resp);
+
+
     end
-    //
+
     //////////////////////////////////////////////////////////////////////////////////
     // Simulation output processes
     //////////////////////////////////////////////////////////////////////////////////
-    //
+
     always @(posedge dac_clk) begin
-         $display("dac value changed to %d", dac_data);
+         $display("[DAC] dac value changed to 0x%x", dac_data);
     end
 endmodule
