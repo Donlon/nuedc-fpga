@@ -4,7 +4,8 @@
 #include <xgpio.h>
 #include <axi_dac.h>
 
-int value = 1;
+int value = 0;
+int isUpMode = 1;
 
 XGpio gpio;   /* The driver instance for GPIO Device 0 */
 
@@ -45,7 +46,21 @@ int main() {
 }
 
 void SysTick_Handler() {
-    // Output a 256 kHz saw wave
-    AXI_DAC_convertSingle((void*) XPAR_AXI_DAC_0_S_AXI_BASEADDR, value & 0xff);
-    value++;
+    // Output a 0.5 kHz/256kSps triangle wave
+    AXI_DAC_convertSingle((void*) XPAR_AXI_DAC_0_S_AXI_BASEADDR, value);
+    if (isUpMode) {
+        if (value >= 255) {
+            value--;
+            isUpMode = 0;
+        } else{
+            value++;
+        }
+    } else {
+        if (value <= 0) {
+            value++;
+            isUpMode = 1;
+        } else{
+            value--;
+        }
+    }
 }
