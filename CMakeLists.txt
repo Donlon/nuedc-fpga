@@ -27,3 +27,5 @@ endif ()
 project(nuedc-fpga C)
 
 add_subdirectory(eic-final/software)
+
+add_subdirectory(ip-tests/dac-swtest)
