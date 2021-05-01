@@ -2,23 +2,21 @@
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 TLS
 #  -string -flagsOSRD
-preplace port aclk -pg 1 -lvl 0 -x -30 -y 90 -defaultsOSRD
-preplace port aresetn -pg 1 -lvl 0 -x -30 -y 130 -defaultsOSRD
-preplace port dac_clk -pg 1 -lvl 4 -x 790 -y 360 -defaultsOSRD
-preplace portBus dac_data -pg 1 -lvl 4 -x 790 -y 340 -defaultsOSRD
-preplace inst axi_vip_m -pg 1 -lvl 1 -x 100 -y 160 -defaultsOSRD
+preplace port aclk -pg 1 -lvl 0 -x -50 -y 90 -defaultsOSRD
+preplace port aresetn -pg 1 -lvl 0 -x -50 -y 130 -defaultsOSRD
+preplace port dac_clk -pg 1 -lvl 4 -x 800 -y 360 -defaultsOSRD
+preplace portBus dac_data -pg 1 -lvl 4 -x 800 -y 340 -defaultsOSRD
+preplace inst axi_vip_m -pg 1 -lvl 1 -x 90 -y 160 -defaultsOSRD
 preplace inst axi_vip_s -pg 1 -lvl 3 -x 670 -y 190 -defaultsOSRD
-preplace inst xlconstant_0 -pg 1 -lvl 1 -x 100 -y 290 -defaultsOSRD
-preplace inst axi_dac_0 -pg 1 -lvl 2 -x 390 -y 210 -defaultsOSRD
-preplace netloc Net 1 0 3 -10 80 220 100 580J
-preplace netloc Net1 1 0 3 0 90 200 320 580J
-preplace netloc xlconstant_0_dout 1 1 1 210J 220n
-preplace netloc axi_dac_v0_1_0_dac_data 1 2 2 560J 340 NJ
-preplace netloc axi_dac_0_dac_clk 1 2 2 570J 360 N
-preplace netloc axi_dac_v0_1_0_m_axi 1 2 1 N 170
-preplace netloc axi_vip_m_M_AXI 1 1 1 N 160
-levelinfo -pg 1 -30 100 390 670 790
-pagesize -pg 1 -db -bbox -sgen -140 0 940 410
+preplace inst axi_dac_0 -pg 1 -lvl 2 -x 380 -y 210 -defaultsOSRD
+preplace netloc Net 1 0 3 -20 90 210 100 540J
+preplace netloc Net1 1 0 3 -30 230 200 110 560J
+preplace netloc axi_dac_v0_1_0_dac_data 1 2 2 570J 110 760J
+preplace netloc axi_dac_0_dac_clk 1 2 2 550J 100 770
+preplace netloc axi_vip_m_M_AXI 1 1 1 190 160n
+preplace netloc axi_dac_v0_1_0_m_axi 1 2 1 530 170n
+levelinfo -pg 1 -50 90 380 670 800
+pagesize -pg 1 -db -bbox -sgen -160 0 950 500
 "
 }
 0
