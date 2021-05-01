@@ -29,11 +29,16 @@ set_property -dict {PACKAGE_PIN L19 IOSTANDARD LVCMOS33} [get_ports {gpio[7]}]
 set_property -dict {PACKAGE_PIN M20 IOSTANDARD LVCMOS33} [get_ports {gpio[6]}]
 set_property -dict {PACKAGE_PIN M19 IOSTANDARD LVCMOS33} [get_ports {gpio[5]}]
 
-set_property -dict {PACKAGE_PIN N16 IOSTANDARD LVCMOS33} [get_ports {gpio[4]}] # KEY2
-set_property -dict {PACKAGE_PIN T17 IOSTANDARD LVCMOS33} [get_ports {gpio[3]}] # KEY3
-set_property -dict {PACKAGE_PIN R17 IOSTANDARD LVCMOS33} [get_ports {gpio[2]}] # KEY4
-set_property -dict {PACKAGE_PIN M14 IOSTANDARD LVCMOS33} [get_ports {gpio[1]}] # LED1
-set_property -dict {PACKAGE_PIN M15 IOSTANDARD LVCMOS33} [get_ports {gpio[0]}] # LED2
+# KEY2
+set_property -dict {PACKAGE_PIN N16 IOSTANDARD LVCMOS33} [get_ports {gpio[4]}]
+# KEY3
+set_property -dict {PACKAGE_PIN T17 IOSTANDARD LVCMOS33} [get_ports {gpio[3]}]
+# KEY4
+set_property -dict {PACKAGE_PIN R17 IOSTANDARD LVCMOS33} [get_ports {gpio[2]}]
+# LED1
+set_property -dict {PACKAGE_PIN M14 IOSTANDARD LVCMOS33} [get_ports {gpio[1]}]
+# LED2
+set_property -dict {PACKAGE_PIN M15 IOSTANDARD LVCMOS33} [get_ports {gpio[0]}]
 
 #####          DAC pins              #####
 set_property -dict {PACKAGE_PIN P18 IOSTANDARD LVCMOS33} [get_ports {dac_data[0]}]
