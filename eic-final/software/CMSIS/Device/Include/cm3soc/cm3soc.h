@@ -51,14 +51,14 @@ typedef enum IRQn
 
 
 /* -----------------------  cm3soc Specific Interrupt Numbers  -------------------- */
-  UART0_IRQn                    = 0,       /* UART 0 Interrupt                      */
-  GPIO0_IRQn                    = 1,       /* GPIO 0 Interrupt                      */
-  GPIO1_IRQn                    = 2,       /* GPIO 1 Interrupt                      */
-  QSPI0_IRQn                    = 3,       /* Quad SPI 0, (Arty board) Interrupt    */
-  DAP_QSPI0_IRQn                = 4,       /* DAPLink board Quad SPI 0 Interrupt    */
-  DAP_SPI0_IRQn                 = 5,       /* DAPLink board SPI 0 Interrupt         */
-  DAP_QSPI_XIP_IRQn             = 6,       /* DAPLink board Quad SPI XIP Interrupt  */
-  DAPLinkFittedn_IRQn           = 7,       /* Static signal used to detect fitting of DAPLink board */
+  GPIO0_IRQn                    = 0,       /* GPIO 0 Interrupt                      */
+  Unused1_IRQn                  = 1,
+  Unused2_IRQn                  = 2,
+  Unused3_IRQn                  = 3,
+  Unused4_IRQn                  = 4,
+  Unused5_IRQn                  = 5,
+  Unused6_IRQn                  = 6,
+  Unused7_IRQn                  = 7,
   Unused8_IRQn                  = 8,
   Unused9_IRQn                  = 9,
   Unused10_IRQn                 = 10,
