@@ -1327,12 +1327,12 @@
               "SEG_axi_bram_ctrl_0_Mem0": {
                 "address_block": "/axi_bram_insn_0/S_AXI/Mem0",
                 "offset": "0x00000000",
-                "range": "8K"
+                "range": "32K"
               },
               "SEG_axi_bram_data_0_Mem0": {
                 "address_block": "/axi_bram_data_0/S_AXI/Mem0",
-                "offset": "0x21000000",
-                "range": "16K"
+                "offset": "0x11000000",
+                "range": "32K"
               }
             }
           }
@@ -1346,8 +1346,8 @@
             "segments": {
               "SEG_axi_bram_data_0_Mem0": {
                 "address_block": "/axi_bram_data_0/S_AXI/Mem0",
-                "offset": "0x21000000",
-                "range": "16K"
+                "offset": "0x11000000",
+                "range": "32K"
               },
               "SEG_axi_bram_insn_0_Mem0": {
                 "address_block": "/axi_bram_insn_0/S_AXI/Mem0",
