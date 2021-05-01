@@ -1,7 +1,8 @@
 MEMORY
 {
-    ITCM  (RX) : ORIGIN = 0x00000000, LENGTH = 32k
-    DTCM  (RW) : ORIGIN = 0x20000000, LENGTH = 32k
+    ITCM       (RX) : ORIGIN = 0x00000000, LENGTH = 32k
+    DTCM       (RW) : ORIGIN = 0x20000000, LENGTH = 32k
+    DATA_BRAM  (RW) : ORIGIN = 0x11000000, LENGTH = 32k
 }
 
 REGION_ALIAS("REGION_TEXT", ITCM);
@@ -50,6 +51,12 @@ SECTIONS {
         . = ALIGN (4);
         __data_end = .;
     } > REGION_DATA AT> REGION_TEXT
+
+    .exdata : {
+        KEEP (*(.exdata))
+        KEEP (*(.exdata*))
+        . = ALIGN (4);
+    } > DATA_BRAM AT> DATA_BRAM
 
     .bss : {
         __bss_start__ = .;

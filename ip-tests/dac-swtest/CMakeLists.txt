@@ -9,7 +9,7 @@ target_include_directories(dac-swtest PRIVATE CMSIS/Include)
 target_include_directories(dac-swtest PRIVATE CMSIS/Device/Include)
 
 target_link_directories(dac-swtest PRIVATE ${BSP_DIRECTORY}/lib)
-target_link_libraries(dac-swtest PRIVATE xil)
+target_link_libraries(dac-swtest PRIVATE m xil)
 
 target_link_options(dac-swtest PRIVATE
         --specs=nano.specs

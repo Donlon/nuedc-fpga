@@ -44,6 +44,8 @@ extern void SysTick_Handler(void);
 #pragma GCC diagnostic pop
 #endif
 
+extern void GPIO_Handler();
+
 __used __section(".intvecs")
 const void *const interruptVectors[] = { // NOLINT
         &__stack_top,                          /* The initial stack pointer */
@@ -64,7 +66,7 @@ const void *const interruptVectors[] = { // NOLINT
         SysTick_Handler,                       /* SysTick Handler               */
 
         /* External Interrupts */
-        Default_Handler,  /* Unused IRQ0 */
+        GPIO_Handler,     /* GPIO Handler */
         Default_Handler,  /* Unused IRQ1 */
         Default_Handler,  /* Unused IRQ2 */
         Default_Handler,  /* Unused IRQ3 */
