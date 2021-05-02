@@ -14,4 +14,5 @@
 
 ## axi-dac
 
-- [AxiDAC](ip/axidac.md)
+- [AXI ADC](ip/axiadc.md)
+- [AXI DAC](ip/axidac.md)
