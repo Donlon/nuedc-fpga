@@ -17,13 +17,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="26451758000fs"></ZoomStartTime>
-      <ZoomEndTime time="35861758001fs"></ZoomEndTime>
-      <Cursor1Time time="29171758000fs"></Cursor1Time>
+      <ZoomStartTime time="42973330982fs"></ZoomStartTime>
+      <ZoomEndTime time="52453330983fs"></ZoomEndTime>
+      <Cursor1Time time="49073147000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="250"></NameColumnWidth>
-      <ValueColumnWidth column_width="68"></ValueColumnWidth>
+      <NameColumnWidth column_width="244"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="9" />
    <wvobject type="logic" fp_name="/tb_repeat_mode/u_axi_vip/aclk">
@@ -72,6 +72,7 @@
    <wvobject type="group" fp_name="group322">
       <obj_property name="label">s_if</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject type="logic" fp_name="/tb_repeat_mode/u_axi_vip/axi_vip_1_i/axi_dac_0/inst/axi_dac_v0_1_S_AXI_inst/slv_reg_rden">
          <obj_property name="ElementShortName">slv_reg_rden</obj_property>
          <obj_property name="ObjectShortName">slv_reg_rden</obj_property>
@@ -145,15 +146,15 @@
       <obj_property name="label">m_if</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="isExpanded"></obj_property>
-      <wvobject type="logic" fp_name="/tb_repeat_mode/u_axi_vip/axi_vip_1_i/axi_dac_0/inst/axi_dac_v0_1_M_AXI_inst/loop_mode">
-         <obj_property name="ElementShortName">loop_mode</obj_property>
-         <obj_property name="ObjectShortName">loop_mode</obj_property>
-      </wvobject>
       <wvobject type="array" fp_name="/tb_repeat_mode/u_axi_vip/axi_vip_1_i/axi_dac_0/inst/axi_dac_v0_1_M_AXI_inst/exec_state">
          <obj_property name="ElementShortName">exec_state[1:0]</obj_property>
          <obj_property name="ObjectShortName">exec_state[1:0]</obj_property>
          <obj_property name="CustomSignalColor">#00FFFF</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_repeat_mode/u_axi_vip/axi_vip_1_i/axi_dac_0/inst/axi_dac_v0_1_M_AXI_inst/loop_mode">
+         <obj_property name="ElementShortName">loop_mode</obj_property>
+         <obj_property name="ObjectShortName">loop_mode</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/tb_repeat_mode/u_axi_vip/axi_vip_1_i/axi_dac_0/inst/axi_dac_v0_1_M_AXI_inst/read_addr">
          <obj_property name="ElementShortName">read_addr[31:0]</obj_property>
@@ -179,9 +180,17 @@
          <obj_property name="CustomSignalColor">#0000A0</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_repeat_mode/u_axi_vip/axi_vip_1_i/axi_dac_0/inst/axi_dac_v0_1_M_AXI_inst/read_offset_reach_end">
-         <obj_property name="ElementShortName">read_offset_reach_end</obj_property>
-         <obj_property name="ObjectShortName">read_offset_reach_end</obj_property>
+      <wvobject type="array" fp_name="/tb_repeat_mode/u_axi_vip/axi_vip_1_i/axi_dac_0/inst/axi_dac_v0_1_M_AXI_inst/read_index">
+         <obj_property name="ElementShortName">read_index[3:0]</obj_property>
+         <obj_property name="ObjectShortName">read_index[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_repeat_mode/u_axi_vip/axi_vip_1_i/axi_dac_0/inst/axi_dac_v0_1_M_AXI_inst/is_last_burst_addr">
+         <obj_property name="ElementShortName">is_last_burst_addr</obj_property>
+         <obj_property name="ObjectShortName">is_last_burst_addr</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_repeat_mode/u_axi_vip/axi_vip_1_i/axi_dac_0/inst/axi_dac_v0_1_M_AXI_inst/is_last_burst">
+         <obj_property name="ElementShortName">is_last_burst</obj_property>
+         <obj_property name="ObjectShortName">is_last_burst</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/tb_repeat_mode/u_axi_vip/axi_vip_1_i/axi_dac_0/inst/axi_dac_v0_1_M_AXI_inst/start_single_burst_read">
          <obj_property name="ElementShortName">start_single_burst_read</obj_property>
@@ -190,6 +199,14 @@
       <wvobject type="logic" fp_name="/tb_repeat_mode/u_axi_vip/axi_vip_1_i/axi_dac_0/inst/axi_dac_v0_1_M_AXI_inst/burst_read_active">
          <obj_property name="ElementShortName">burst_read_active</obj_property>
          <obj_property name="ObjectShortName">burst_read_active</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_repeat_mode/u_axi_vip/axi_vip_1_i/axi_dac_0/inst/axi_dac_v0_1_M_AXI_inst/r_done">
+         <obj_property name="ElementShortName">r_done</obj_property>
+         <obj_property name="ObjectShortName">r_done</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_repeat_mode/u_axi_vip/axi_vip_1_i/axi_dac_0/inst/axi_dac_v0_1_M_AXI_inst/disable_fifo_wr">
+         <obj_property name="ElementShortName">disable_fifo_wr</obj_property>
+         <obj_property name="ObjectShortName">disable_fifo_wr</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/tb_repeat_mode/u_axi_vip/axi_vip_1_i/axi_dac_0/inst/axi_dac_v0_1_M_AXI_inst/fifo_full">
          <obj_property name="ElementShortName">fifo_full</obj_property>
@@ -206,10 +223,6 @@
       <wvobject type="logic" fp_name="/tb_repeat_mode/u_axi_vip/axi_vip_1_i/axi_dac_0/inst/axi_dac_v0_1_M_AXI_inst/m_output_push_en">
          <obj_property name="ElementShortName">m_output_push_en</obj_property>
          <obj_property name="ObjectShortName">m_output_push_en</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/tb_repeat_mode/u_axi_vip/axi_vip_1_i/axi_dac_0/inst/axi_dac_v0_1_M_AXI_inst/rnext">
-         <obj_property name="ElementShortName">rnext</obj_property>
-         <obj_property name="ObjectShortName">rnext</obj_property>
       </wvobject>
    </wvobject>
    <wvobject type="group" fp_name="group333">

@@ -61,7 +61,7 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../../../common/ip/axi_dac_0.1/ip/dac_output_fifo.xci">
+      <File Path="$PPRDIR/../../../ip_repo/axi_dac_0.1/ip/dac_output_fifo.xci">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>

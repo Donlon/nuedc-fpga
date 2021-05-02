@@ -95,21 +95,21 @@ module tb_repeat_mode();
         // Wait for the reset to be released
         wait (aresetn == 1'b1);
 
+        /// ===================== size=256, div=5, repeat =====================
         #50ns
-        axi_dac_read_reg(REG_CTL, data, resp);
         axi_dac_write_reg(REG_SRC_ADDR, 32'h20000000, resp);
         axi_dac_write_reg(REG_SRC_SIZE, 16'd256, resp); // 4 * brust16
         axi_dac_write_reg(REG_CLK_DIV, 5, resp); // Clock div: 5
-        #50ns
+        axi_dac_read_reg(REG_CTL, data, resp);
         axi_dac_write_reg(REG_CTL, data | (1 << CTL_REG_REPEAT_BIT) | (1 << CTL_REG_START_BIT), resp);
 
         wait (~u_axi_vip.axi_vip_1_i.axi_dac_0.inst.axi_dac_v0_1_S_AXI_inst.busy);
         $display("[%t] Repeat mode test ended.", $realtime);
         #1us $stop;
 
+        /// ===================== size=128, div=7, loop =====================
         axi_dac_write_reg(REG_SRC_SIZE, 16'd128, resp); // 2 * brust16
         axi_dac_write_reg(REG_CLK_DIV, 7, resp); // Clock div: 7
-
         axi_dac_read_reg(REG_CTL, data, resp);
         axi_dac_write_reg(REG_CTL,
                           data | (1 << CTL_REG_LOOP_BIT) | (1 << CTL_REG_START_BIT),
@@ -122,6 +122,22 @@ module tb_repeat_mode();
         wait (~u_axi_vip.axi_vip_1_i.axi_dac_0.inst.axi_dac_v0_1_S_AXI_inst.busy);
         $display("[%t] Loop mode test ended.", $realtime);
         #1us $stop;
+
+        /// ===================== size=84, div=5, repeat =====================
+        #50ns
+        axi_dac_write_reg(REG_SRC_SIZE, 16'd100, resp); // 1 * brust16 + 9*4
+        axi_dac_write_reg(REG_CLK_DIV, 3, resp); // Clock div: 5
+        axi_dac_read_reg(REG_CTL, data, resp);
+        axi_dac_write_reg(REG_CTL, data | (1 << CTL_REG_REPEAT_BIT) | (1 << CTL_REG_START_BIT), resp);
+        #20us
+        axi_dac_read_reg(REG_CTL, data, resp);
+        axi_dac_write_reg(REG_CTL, data | (1 << CTL_REG_STOP_BIT), resp);
+        $display("[%t] Stop signal was sent.", $realtime);
+
+        wait (~u_axi_vip.axi_vip_1_i.axi_dac_0.inst.axi_dac_v0_1_S_AXI_inst.busy);
+        $display("[%t] Repeat mode test 2 ended.", $realtime);
+        #1us $stop;
+ 
     end
 
     //////////////////////////////////////////////////////////////////////////////////
