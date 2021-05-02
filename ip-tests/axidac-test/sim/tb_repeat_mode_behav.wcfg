@@ -17,12 +17,12 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="42973330982fs"></ZoomStartTime>
-      <ZoomEndTime time="52453330983fs"></ZoomEndTime>
-      <Cursor1Time time="49073147000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="32500000001fs"></ZoomEndTime>
+      <Cursor1Time time="3690100000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="244"></NameColumnWidth>
+      <NameColumnWidth column_width="240"></NameColumnWidth>
       <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="9" />
@@ -246,6 +246,8 @@
          <obj_property name="ObjectShortName">out_data[7:0]</obj_property>
          <obj_property name="CustomSignalColor">#FF00FF</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+         <obj_property name="CellHeight">100</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/tb_repeat_mode/u_axi_vip/axi_vip_1_i/axi_dac_0/inst/u_output/dac_clk_en">
          <obj_property name="ElementShortName">dac_clk_en</obj_property>
