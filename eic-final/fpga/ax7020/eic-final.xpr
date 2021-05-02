@@ -40,13 +40,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="22"/>
-    <Option Name="WTModelSimExportSim" Val="22"/>
-    <Option Name="WTQuestaExportSim" Val="22"/>
-    <Option Name="WTIesExportSim" Val="22"/>
-    <Option Name="WTVcsExportSim" Val="22"/>
-    <Option Name="WTRivieraExportSim" Val="22"/>
-    <Option Name="WTActivehdlExportSim" Val="22"/>
+    <Option Name="WTXSimExportSim" Val="23"/>
+    <Option Name="WTModelSimExportSim" Val="23"/>
+    <Option Name="WTQuestaExportSim" Val="23"/>
+    <Option Name="WTIesExportSim" Val="23"/>
+    <Option Name="WTVcsExportSim" Val="23"/>
+    <Option Name="WTRivieraExportSim" Val="23"/>
+    <Option Name="WTActivehdlExportSim" Val="23"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -67,23 +67,26 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="procesor_system_top.bd" FileRelPathName="ip/procesor_system_top_axi_bram_ctrl_0_0/procesor_system_top_axi_bram_ctrl_0_0.xci">
-          <Proxy FileSetName="procesor_system_top_axi_bram_ctrl_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="procesor_system_top.bd" FileRelPathName="ip/procesor_system_top_blk_mem_gen_1_0/procesor_system_top_blk_mem_gen_1_0.xci">
-          <Proxy FileSetName="procesor_system_top_blk_mem_gen_1_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="procesor_system_top.bd" FileRelPathName="ip/procesor_system_top_blk_mem_gen_0_1/procesor_system_top_blk_mem_gen_0_1.xci">
           <Proxy FileSetName="procesor_system_top_blk_mem_gen_0_1"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="procesor_system_top.bd" FileRelPathName="ip/procesor_system_top_xbar_1/procesor_system_top_xbar_1.xci">
-          <Proxy FileSetName="procesor_system_top_xbar_1"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="procesor_system_top.bd" FileRelPathName="ip/procesor_system_top_xbar_0/procesor_system_top_xbar_0.xci">
           <Proxy FileSetName="procesor_system_top_xbar_0"/>
         </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="procesor_system_top.bd" FileRelPathName="ip/procesor_system_top_blk_mem_gen_1_0/procesor_system_top_blk_mem_gen_1_0.xci">
+          <Proxy FileSetName="procesor_system_top_blk_mem_gen_1_0"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="procesor_system_top.bd" FileRelPathName="ip/procesor_system_top_CORTEXM3_AXI_0_0/procesor_system_top_CORTEXM3_AXI_0_0.xci">
           <Proxy FileSetName="procesor_system_top_CORTEXM3_AXI_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="procesor_system_top.bd" FileRelPathName="ip/procesor_system_top_axi_dac_0_0/procesor_system_top_axi_dac_0_0.xci">
+          <Proxy FileSetName="procesor_system_top_axi_dac_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="procesor_system_top.bd" FileRelPathName="ip/procesor_system_top_xbar_1/procesor_system_top_xbar_1.xci">
+          <Proxy FileSetName="procesor_system_top_xbar_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="procesor_system_top.bd" FileRelPathName="ip/procesor_system_top_axi_bram_ctrl_0_0/procesor_system_top_axi_bram_ctrl_0_0.xci">
+          <Proxy FileSetName="procesor_system_top_axi_bram_ctrl_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="procesor_system_top.bd" FileRelPathName="ip/procesor_system_top_axi_uartlite_0_0/procesor_system_top_axi_uartlite_0_0.xci">
           <Proxy FileSetName="procesor_system_top_axi_uartlite_0_0"/>
@@ -201,6 +204,12 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
+    <FileSet Name="procesor_system_top_axi_dac_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/procesor_system_top_axi_dac_0_0">
+      <Config>
+        <Option Name="TopModule" Val="procesor_system_top_axi_dac_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
   </FileSets>
   <Simulators>
     <Simulator Name="XSim">
@@ -302,6 +311,17 @@
     <Run Id="procesor_system_top_axi_uartlite_0_0_synth_1" Type="Ft3:Synth" SrcSet="procesor_system_top_axi_uartlite_0_0" Part="xc7z020clg400-2" ConstrsSet="procesor_system_top_axi_uartlite_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/procesor_system_top_axi_uartlite_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2019"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="procesor_system_top_axi_dac_0_0_synth_1" Type="Ft3:Synth" SrcSet="procesor_system_top_axi_dac_0_0" Part="xc7z020clg400-2" ConstrsSet="procesor_system_top_axi_dac_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/procesor_system_top_axi_dac_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -440,6 +460,24 @@
     <Run Id="procesor_system_top_axi_uartlite_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="procesor_system_top_axi_uartlite_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="procesor_system_top_axi_uartlite_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2019"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="procesor_system_top_axi_dac_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="procesor_system_top_axi_dac_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="procesor_system_top_axi_dac_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

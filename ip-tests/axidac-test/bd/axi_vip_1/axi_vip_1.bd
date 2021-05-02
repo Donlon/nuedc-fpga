@@ -5,7 +5,8 @@
       "device": "xc7z020clg400-2",
       "name": "axi_vip_1",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2019.1"
+      "tool_version": "2019.1",
+      "validated": "true"
     },
     "design_tree": {
       "axi_vip_m": "",
@@ -25,7 +26,21 @@
         "right": "0"
       },
       "dac_clk": {
-        "direction": "O"
+        "direction": "O",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "axi_vip_1_axi_dac_0_0_dac_clk",
+            "value_src": "default_prop"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default_prop"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default_prop"
+          }
+        }
       }
     },
     "components": {
@@ -490,6 +505,10 @@
                 "value": "READ_WRITE",
                 "value_src": "constant"
               },
+              "RUSER_BITS_PER_BYTE": {
+                "value": "0",
+                "value_src": "user_prop"
+              },
               "RUSER_WIDTH": {
                 "value": "0",
                 "value_src": "constant"
@@ -497,6 +516,10 @@
               "SUPPORTS_NARROW_BURST": {
                 "value": "0",
                 "value_src": "auto"
+              },
+              "WUSER_BITS_PER_BYTE": {
+                "value": "0",
+                "value_src": "user_prop"
               },
               "WUSER_WIDTH": {
                 "value": "0",
@@ -604,19 +627,51 @@
         "ports": {
           "s_axi_aclk": {
             "type": "clk",
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_BUSIF": {
+                "value": "s_axi",
+                "value_src": "constant"
+              },
+              "ASSOCIATED_RESET": {
+                "value": "s_axi_aresetn",
+                "value_src": "constant"
+              }
+            }
           },
           "s_axi_aresetn": {
             "type": "rst",
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
           },
           "m_axi_aclk": {
             "type": "clk",
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_BUSIF": {
+                "value": "m_axi",
+                "value_src": "constant"
+              },
+              "ASSOCIATED_RESET": {
+                "value": "m_axi_aresetn",
+                "value_src": "constant"
+              }
+            }
           },
           "m_axi_aresetn": {
             "type": "rst",
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
           },
           "dac_clk": {
             "type": "clk",
@@ -639,16 +694,16 @@
       }
     },
     "interface_nets": {
-      "axi_dac_v0_1_0_m_axi": {
-        "interface_ports": [
-          "axi_dac_0/m_axi",
-          "axi_vip_s/S_AXI"
-        ]
-      },
       "axi_vip_m_M_AXI": {
         "interface_ports": [
           "axi_vip_m/M_AXI",
           "axi_dac_0/s_axi"
+        ]
+      },
+      "axi_dac_v0_1_0_m_axi": {
+        "interface_ports": [
+          "axi_dac_0/m_axi",
+          "axi_vip_s/S_AXI"
         ]
       }
     },
