@@ -4,6 +4,9 @@ module top(
     input ext_reset_n,
     inout [15:0] gpio,
 
+    input  uart_rxd,
+    output uart_txd,
+
     // JTAG pins
     input  TCK,
     input  TMS,
@@ -43,6 +46,8 @@ module top(
         .clk_locked(clk_locked),
         .ext_reset_n(ext_reset_n),
         .gpio_tri_io(gpio),
+        .uart_rxd(uart_rxd),
+        .uart_txd(uart_txd),
         
         .dac_clk(dac_clk),
         .dac_data(dac_data)

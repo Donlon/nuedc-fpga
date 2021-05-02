@@ -40,6 +40,10 @@ set_property -dict {PACKAGE_PIN M14 IOSTANDARD LVCMOS33} [get_ports {gpio[1]}]
 # LED2
 set_property -dict {PACKAGE_PIN M15 IOSTANDARD LVCMOS33} [get_ports {gpio[0]}]
 
+#####          UART pins              #####
+set_property -dict {PACKAGE_PIN D19 IOSTANDARD LVCMOS33} [get_ports uart_txd]
+set_property -dict {PACKAGE_PIN D20 IOSTANDARD LVCMOS33} [get_ports uart_rxd]
+
 #####          DAC pins              #####
 set_property -dict {PACKAGE_PIN P18 IOSTANDARD LVCMOS33} [get_ports {dac_data[0]}]
 set_property -dict {PACKAGE_PIN W14 IOSTANDARD LVCMOS33} [get_ports {dac_data[1]}]
