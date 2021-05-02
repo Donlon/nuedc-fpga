@@ -22,7 +22,7 @@
       <Cursor1Time time="3690100000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="240"></NameColumnWidth>
+      <NameColumnWidth column_width="236"></NameColumnWidth>
       <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="9" />
@@ -207,6 +207,10 @@
       <wvobject type="logic" fp_name="/tb_repeat_mode/u_axi_vip/axi_vip_1_i/axi_dac_0/inst/axi_dac_v0_1_M_AXI_inst/disable_fifo_wr">
          <obj_property name="ElementShortName">disable_fifo_wr</obj_property>
          <obj_property name="ObjectShortName">disable_fifo_wr</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_repeat_mode/u_axi_vip/axi_vip_1_i/axi_dac_0/inst/axi_dac_v0_1_M_AXI_inst/fifo_half_full">
+         <obj_property name="ElementShortName">fifo_half_full</obj_property>
+         <obj_property name="ObjectShortName">fifo_half_full</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/tb_repeat_mode/u_axi_vip/axi_vip_1_i/axi_dac_0/inst/axi_dac_v0_1_M_AXI_inst/fifo_full">
          <obj_property name="ElementShortName">fifo_full</obj_property>
