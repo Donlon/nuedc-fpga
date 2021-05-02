@@ -40,8 +40,10 @@ FIFO 后结束 DAC 转换，因此 Busy 位不会立即无效，DAC 的停止时
 * Start 之后由于信号跨时钟域同步以及 FIFO 延迟的问题，output stage 不会马上启动
 <!-- 时钟切换的时候亚稳态怎么办？ -->
 <!-- pulse和state的sync延时不一样 -->
-* AXI_M 的 transaction 的 brust 比较多，如果中间被 fifo_full 堵住的话会把整个 transaction
+* AXI_M 的 transaction 的 burst 比较多，如果中间被 fifo_full 堵住的话会把整个 transaction
 拉得特别长，占用总线时间，应该在 FIFO 半满的时候开始读 RAM
 * 用 FIFO 的 almost_full 信号代替 full 信号可以解决丢数据的问题
 * TODO: 接收到 Stop 信号后/非对齐的读取位置达到时不往 FIFO 中写数据 (AXI_M)
 * SRC_SIZE 需要对齐到 4 字节，否则 output stage 读取时不能跳过 FIFO 中的数据
+* 改成同步时钟或许也可以
+* TODO: 增加 AXI Stream 接口的输入通道

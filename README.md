@@ -12,7 +12,10 @@
 
 # IP 文档
 
-## axi-dac
+## axi-adc
 
 - [AXI ADC](ip/axiadc.md)
+
+## axi-dac
+
 - [AXI DAC](ip/axidac.md)
