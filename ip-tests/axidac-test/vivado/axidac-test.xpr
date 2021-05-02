@@ -22,7 +22,7 @@
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../Links/Documents/FPGA/DesignStart/Cortex-M3/vivado/Arm_ipi_repository"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../common/ip"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../ip_repo"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>
@@ -63,61 +63,62 @@
       <Filter Type="Srcs"/>
       <File Path="$PPRDIR/../../../common/ip/axi_dac_0.1/ip/dac_output_fifo.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../common/ip/axi_dac_0.1/hdl/axi_dac_v0_1_M_AXI.v">
+      <File Path="$PPRDIR/../../../ip_repo/axi_dac_0.1/hdl/axi_dac_v0_1_M_AXI.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../common/ip/axi_dac_0.1/hdl/axi_dac_v0_1_S_AXI.v">
+      <File Path="$PPRDIR/../../../ip_repo/axi_dac_0.1/hdl/axi_dac_v0_1_S_AXI.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../common/ip/axi_dac_0.1/hdl/clock_gate.v">
+      <File Path="$PPRDIR/../../../ip_repo/axi_dac_0.1/hdl/clock_gate.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../common/ip/axi_dac_0.1/hdl/dac_clk_gen.v">
+      <File Path="$PPRDIR/../../../ip_repo/axi_dac_0.1/hdl/dac_clk_gen.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../common/ip/axi_dac_0.1/hdl/dac_output_stage.v">
+      <File Path="$PPRDIR/../../../ip_repo/axi_dac_0.1/hdl/dac_output_stage.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../common/ip/axi_dac_0.1/hdl/signal_sync_fast_to_slow.v">
+      <File Path="$PPRDIR/../../../ip_repo/axi_dac_0.1/hdl/signal_sync_fast_to_slow.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../common/ip/axi_dac_0.1/hdl/signal_sync_ff.v">
+      <File Path="$PPRDIR/../../../ip_repo/axi_dac_0.1/hdl/signal_sync_ff.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../common/ip/axi_dac_0.1/hdl/axi_dac_v0_1.v">
+      <File Path="$PPRDIR/../../../ip_repo/axi_dac_0.1/hdl/axi_dac_v0_1.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
