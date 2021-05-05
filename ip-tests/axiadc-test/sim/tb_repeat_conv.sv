@@ -2,6 +2,7 @@
 
 import axi_vip_pkg::*;
 import axi_vip_1_axi_vip_m_0_pkg::*;
+import axi_vip_1_axi_vip_s_0_pkg::*;
 
 //////////////////////////////////////////////////////////////////////////////////
 // Test Bench Signals
@@ -11,10 +12,10 @@ import axi_vip_1_axi_vip_m_0_pkg::*;
 bit aclk = 0, aresetn = 1;
 
 //AXI4-Lite signals
-xil_axi_resp_t  resp;
+xil_axi_resp_t resp;
 bit [31:0] addr, data, base_addr = 'h40000000;
 
-module tb_single_conv();
+module tb_repeat_conv();
     `include "axi_adc.vh"
     `include "axi_adc_test.vh"
 
@@ -49,13 +50,16 @@ module tb_single_conv();
 
     // Step 3 - Declare the agent for the master VIP
     axi_vip_1_axi_vip_m_0_mst_t      master_agent;
+    axi_vip_1_axi_vip_s_0_slv_mem_t  slave_agent;
 
     initial begin
-        // Step 4 - Create a new agent
         master_agent = new("master vip agent", u_axi_vip.axi_vip_1_i.axi_vip_m.inst.IF);
-
-        // Step 5 - Start the agent
         master_agent.start_master();
+        slave_agent = new("slave vip mem agent", u_axi_vip.axi_vip_1_i.axi_vip_s.inst.IF);
+        slave_agent.start_slave();
+        slave_agent.mem_model.set_memory_fill_policy(XIL_AXI_MEMORY_FILL_RANDOM);
+
+        $timeformat(-9, 2, " ns");
 
         // Wait for the reset to be released
         wait (aresetn == 1'b1);
@@ -63,24 +67,47 @@ module tb_single_conv();
         #50ns
         axi_adc_read_reg(REG_CTL, data, resp);
 
-        // ================ div=4, single ================
-        axi_adc_write_reg(REG_CLK_DIV, 'd4, resp);
-        axi_adc_bis_reg(REG_CTL, (1 << REG_CTL_START_BIT), resp);
-
+        // ================ div=3, repeat ================
+        axi_adc_write_reg(REG_CLK_DIV,  'd3, resp);
+        axi_adc_write_reg(REG_DST_ADDR, 'h20000000, resp);
+        axi_adc_write_reg(REG_DST_SIZE, 'd256, resp);
+        axi_adc_bis_reg(REG_CTL, (1 << REG_CTL_REPEAT_BIT) | (1 << REG_CTL_START_BIT), resp);
         axi_adc_wait_idle();
+        #1us
+        $display("[%t] Repeat mode test 1 finished.", $realtime);
+        $stop();
 
-        // ================ div=7, single ================
-        axi_adc_write_reg(REG_CLK_DIV, 'd7, resp);
-        axi_adc_bis_reg(REG_CTL, (1 << REG_CTL_START_BIT), resp);
-
-        axi_adc_wait_idle();
-
-        // ================ div=1, single ================
+        // ================ div=1, repeat ================
         axi_adc_write_reg(REG_CLK_DIV, 'd1, resp);
         axi_adc_bis_reg(REG_CTL, (1 << REG_CTL_START_BIT), resp);
-
+        #5us
+        axi_adc_bis_reg(REG_CTL, (1 << REG_CTL_STOP_BIT), resp);
         axi_adc_wait_idle();
+        #1us
+        $display("[%t] Repeat mode test 2 finished.", $realtime);
         $stop();
+
+        // ================ div=7, repeat ================
+        axi_adc_write_reg(REG_CLK_DIV,  'd7, resp);
+        axi_adc_write_reg(REG_DST_SIZE, 'd55, resp);
+        axi_adc_bis_reg(REG_CTL, (1 << REG_CTL_START_BIT), resp);
+        axi_adc_wait_idle();
+        #1us
+        $display("[%t] Repeat mode test 3 finished.", $realtime);
+        $stop();
+
+
+        // ================ div=7, repeat ================
+        axi_adc_write_reg(REG_CLK_DIV,  'd6, resp);
+        axi_adc_write_reg(REG_DST_SIZE, 'd55, resp);
+        axi_adc_bis_reg(REG_CTL, (1 << REG_CTL_START_BIT), resp);
+        #3us
+        axi_adc_bis_reg(REG_CTL, (1 << REG_CTL_STOP_BIT), resp);
+        axi_adc_wait_idle();
+        #1us
+        $display("[%t] Repeat mode test 3 finished.", $realtime);
+        $stop();
+
     end
 
     //////////////////////////////////////////////////////////////////////////////////

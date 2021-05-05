@@ -3,49 +3,50 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="tb_single_conv_behav.wdb" id="1">
+      <db_ref path="tb_repeat_conv_behav.wdb" id="1">
          <top_modules>
-            <top_module name="\$unit_tb_single_conv_sv " />
+            <top_module name="\$unit_tb_repeat_conv_sv " />
             <top_module name="axi_vip_1_axi_vip_m_0_pkg" />
+            <top_module name="axi_vip_1_axi_vip_s_0_pkg" />
             <top_module name="axi_vip_pkg" />
             <top_module name="glbl" />
             <top_module name="std" />
-            <top_module name="tb_single_conv" />
+            <top_module name="tb_repeat_conv" />
             <top_module name="xil_common_vip_pkg" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="3290000001fs"></ZoomEndTime>
-      <Cursor1Time time="950000000fs"></Cursor1Time>
+      <ZoomEndTime time="43490000001fs"></ZoomEndTime>
+      <Cursor1Time time="19470873000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="228"></NameColumnWidth>
+      <NameColumnWidth column_width="220"></NameColumnWidth>
       <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="10" />
-   <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/aclk">
+   <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/aclk">
       <obj_property name="ElementShortName">aclk</obj_property>
       <obj_property name="ObjectShortName">aclk</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/aresetn">
+   <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/aresetn">
       <obj_property name="ElementShortName">aresetn</obj_property>
       <obj_property name="ObjectShortName">aresetn</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/adc_clk">
+   <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/adc_clk">
       <obj_property name="ElementShortName">adc_clk</obj_property>
       <obj_property name="ObjectShortName">adc_clk</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_single_conv/u_axi_vip/adc_data">
+   <wvobject type="array" fp_name="/tb_repeat_conv/u_axi_vip/adc_data">
       <obj_property name="ElementShortName">adc_data[7:0]</obj_property>
       <obj_property name="ObjectShortName">adc_data[7:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/S_AXI_ACLK">
+   <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/S_AXI_ACLK">
       <obj_property name="ElementShortName">S_AXI_ACLK</obj_property>
       <obj_property name="ObjectShortName">S_AXI_ACLK</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/S_AXI_ARESETN">
+   <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/S_AXI_ARESETN">
       <obj_property name="ElementShortName">S_AXI_ARESETN</obj_property>
       <obj_property name="ObjectShortName">S_AXI_ARESETN</obj_property>
    </wvobject>
@@ -53,111 +54,115 @@
       <obj_property name="label">s_if</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="isExpanded"></obj_property>
-      <wvobject type="protoinst" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/s_axi">
+      <wvobject type="protoinst" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/s_axi">
          <obj_property name="children_use_element_short_name">true</obj_property>
          <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
          <obj_property name="EnumTransactionColorTable">0=blank 1=#D399FF 2=pink</obj_property>
          <obj_property name="EnumTransactionValueTable">0=blank;1=Read;2=Write;3=Read/Write</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
          <obj_property name="CustomSignalColor">turquoise</obj_property>
-         <obj_property name="Render_Data">/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/s_axi.readWriteSummary</obj_property>
+         <obj_property name="Render_Data">/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/s_axi.readWriteSummary</obj_property>
          <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
          <obj_property name="CellHeight">36</obj_property>
          <obj_property name="ElementShortName">s_axi</obj_property>
          <obj_property name="ObjectShortName">s_axi</obj_property>
          <obj_property name="isExpanded"></obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/dst_addr_reg_out">
+      <wvobject type="array" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/dst_addr_reg_out">
          <obj_property name="ElementShortName">dst_addr_reg_out[31:0]</obj_property>
          <obj_property name="ObjectShortName">dst_addr_reg_out[31:0]</obj_property>
          <obj_property name="CustomSignalColor">#00FF7F</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/dst_size_reg_out">
+      <wvobject type="array" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/dst_size_reg_out">
          <obj_property name="ElementShortName">dst_size_reg_out[31:0]</obj_property>
          <obj_property name="ObjectShortName">dst_size_reg_out[31:0]</obj_property>
          <obj_property name="CustomSignalColor">#00FF7F</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/clk_div_reg_out">
+      <wvobject type="array" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/clk_div_reg_out">
          <obj_property name="ElementShortName">clk_div_reg_out[31:0]</obj_property>
          <obj_property name="ObjectShortName">clk_div_reg_out[31:0]</obj_property>
          <obj_property name="CustomSignalColor">#00FF7F</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/cmp_h_reg_out">
+      <wvobject type="array" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/cmp_h_reg_out">
          <obj_property name="ElementShortName">cmp_h_reg_out[31:0]</obj_property>
          <obj_property name="ObjectShortName">cmp_h_reg_out[31:0]</obj_property>
          <obj_property name="CustomSignalColor">#00FF7F</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/cmp_l_reg_out">
+      <wvobject type="array" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/cmp_l_reg_out">
          <obj_property name="ElementShortName">cmp_l_reg_out[31:0]</obj_property>
          <obj_property name="ObjectShortName">cmp_l_reg_out[31:0]</obj_property>
          <obj_property name="CustomSignalColor">#00FF7F</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/ctl_repeat_reg_out">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/ctl_repeat_reg_out">
          <obj_property name="ElementShortName">ctl_repeat_reg_out</obj_property>
          <obj_property name="ObjectShortName">ctl_repeat_reg_out</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/ctl_noout_reg_out">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/ctl_noout_reg_out">
          <obj_property name="ElementShortName">ctl_noout_reg_out</obj_property>
          <obj_property name="ObjectShortName">ctl_noout_reg_out</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/ctl_trigstart_reg_out">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/ctl_trigstart_reg_out">
          <obj_property name="ElementShortName">ctl_trigstart_reg_out</obj_property>
          <obj_property name="ObjectShortName">ctl_trigstart_reg_out</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/trig_ctl_mode_reg_out">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/trig_ctl_mode_reg_out">
          <obj_property name="ElementShortName">trig_ctl_mode_reg_out</obj_property>
          <obj_property name="ObjectShortName">trig_ctl_mode_reg_out</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/trig_ctl_hcmpen_reg_out">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/trig_ctl_hcmpen_reg_out">
          <obj_property name="ElementShortName">trig_ctl_hcmpen_reg_out</obj_property>
          <obj_property name="ObjectShortName">trig_ctl_hcmpen_reg_out</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/trig_ctl_lcmpen_reg_out">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/trig_ctl_lcmpen_reg_out">
          <obj_property name="ElementShortName">trig_ctl_lcmpen_reg_out</obj_property>
          <obj_property name="ObjectShortName">trig_ctl_lcmpen_reg_out</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/trig_ctl_ien_reg_out">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/trig_ctl_ien_reg_out">
          <obj_property name="ElementShortName">trig_ctl_ien_reg_out</obj_property>
          <obj_property name="ObjectShortName">trig_ctl_ien_reg_out</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/ev_start_out">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/ev_start_out">
          <obj_property name="ElementShortName">ev_start_out</obj_property>
          <obj_property name="ObjectShortName">ev_start_out</obj_property>
          <obj_property name="CustomSignalColor">#00FFFF</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/ev_startsingle_out">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/ev_startsingle_out">
          <obj_property name="ElementShortName">ev_startsingle_out</obj_property>
          <obj_property name="ObjectShortName">ev_startsingle_out</obj_property>
          <obj_property name="CustomSignalColor">#00FFFF</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/ev_stop_out">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/ev_stop_out">
          <obj_property name="ElementShortName">ev_stop_out</obj_property>
          <obj_property name="ObjectShortName">ev_stop_out</obj_property>
          <obj_property name="CustomSignalColor">#00FFFF</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/ev_stoptrig_out">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/ev_stoptrig_out">
          <obj_property name="ElementShortName">ev_stoptrig_out</obj_property>
          <obj_property name="ObjectShortName">ev_stoptrig_out</obj_property>
          <obj_property name="CustomSignalColor">#00FFFF</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/busy">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/busy">
          <obj_property name="ElementShortName">busy</obj_property>
          <obj_property name="ObjectShortName">busy</obj_property>
+         <obj_property name="CustomSignalColor">#FFA500</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/slv_reg_rden">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/slv_reg_rden">
          <obj_property name="ElementShortName">slv_reg_rden</obj_property>
          <obj_property name="ObjectShortName">slv_reg_rden</obj_property>
+         <obj_property name="CustomSignalColor">#00FF00</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/slv_reg_wren">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/slv_reg_wren">
          <obj_property name="ElementShortName">slv_reg_wren</obj_property>
          <obj_property name="ObjectShortName">slv_reg_wren</obj_property>
       </wvobject>
@@ -166,141 +171,168 @@
       <obj_property name="label">m_if</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="isExpanded"></obj_property>
-      <wvobject type="protoinst" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/m_axi">
+      <wvobject type="protoinst" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/m_axi">
          <obj_property name="children_use_element_short_name">true</obj_property>
          <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
          <obj_property name="EnumTransactionColorTable">0=blank 1=#D399FF 2=pink</obj_property>
          <obj_property name="EnumTransactionValueTable">0=blank;1=Read;2=Write;3=Read/Write</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
          <obj_property name="CustomSignalColor">turquoise</obj_property>
-         <obj_property name="Render_Data">/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/m_axi.readWriteSummary</obj_property>
+         <obj_property name="Render_Data">/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/m_axi.readWriteSummary</obj_property>
          <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
          <obj_property name="CellHeight">36</obj_property>
          <obj_property name="ElementShortName">m_axi</obj_property>
          <obj_property name="ObjectShortName">m_axi</obj_property>
+         <obj_property name="isExpanded"></obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_M_AXI_inst/exec_state">
+      <wvobject type="array" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_M_AXI_inst/exec_state">
          <obj_property name="ElementShortName">exec_state[1:0]</obj_property>
          <obj_property name="ObjectShortName">exec_state[1:0]</obj_property>
          <obj_property name="CustomSignalColor">#00FFFF</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_M_AXI_inst/write_index">
+      <wvobject type="array" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_M_AXI_inst/write_index">
          <obj_property name="ElementShortName">write_index[4:0]</obj_property>
          <obj_property name="ObjectShortName">write_index[4:0]</obj_property>
+         <obj_property name="CustomSignalColor">#0000A0</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_M_AXI_inst/start_conv">
-         <obj_property name="ElementShortName">start_conv</obj_property>
-         <obj_property name="ObjectShortName">start_conv</obj_property>
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_M_AXI_inst/conv_end">
+         <obj_property name="ElementShortName">conv_end</obj_property>
+         <obj_property name="ObjectShortName">conv_end</obj_property>
+         <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_M_AXI_inst/fifo_rd_en">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_M_AXI_inst/conv_end_r">
+         <obj_property name="ElementShortName">conv_end_r</obj_property>
+         <obj_property name="ObjectShortName">conv_end_r</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_M_AXI_inst/conv_start">
+         <obj_property name="ElementShortName">conv_start</obj_property>
+         <obj_property name="ObjectShortName">conv_start</obj_property>
+         <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_M_AXI_inst/fifo_rd_en">
          <obj_property name="ElementShortName">fifo_rd_en</obj_property>
          <obj_property name="ObjectShortName">fifo_rd_en</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_M_AXI_inst/fifo_half_empty">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_M_AXI_inst/fifo_half_empty">
          <obj_property name="ElementShortName">fifo_half_empty</obj_property>
          <obj_property name="ObjectShortName">fifo_half_empty</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_M_AXI_inst/start_single_burst_write">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_M_AXI_inst/fifo_empty">
+         <obj_property name="ElementShortName">fifo_empty</obj_property>
+         <obj_property name="ObjectShortName">fifo_empty</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_M_AXI_inst/start_single_burst_write">
          <obj_property name="ElementShortName">start_single_burst_write</obj_property>
          <obj_property name="ObjectShortName">start_single_burst_write</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_M_AXI_inst/writes_done">
-         <obj_property name="ElementShortName">writes_done</obj_property>
-         <obj_property name="ObjectShortName">writes_done</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_M_AXI_inst/burst_write_active">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_M_AXI_inst/burst_write_active">
          <obj_property name="ElementShortName">burst_write_active</obj_property>
          <obj_property name="ObjectShortName">burst_write_active</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_M_AXI_inst/wnext">
-         <obj_property name="ElementShortName">wnext</obj_property>
-         <obj_property name="ObjectShortName">wnext</obj_property>
       </wvobject>
    </wvobject>
    <wvobject type="group" fp_name="group534">
       <obj_property name="label">Input stage</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="isExpanded"></obj_property>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/input_busy">
+      <wvobject type="array" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/state">
+         <obj_property name="ElementShortName">state[1:0]</obj_property>
+         <obj_property name="ObjectShortName">state[1:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/input_busy">
          <obj_property name="ElementShortName">input_busy</obj_property>
          <obj_property name="ObjectShortName">input_busy</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/samp_en">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/samp_en">
          <obj_property name="ElementShortName">samp_en</obj_property>
          <obj_property name="ObjectShortName">samp_en</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/samp_en_rst">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/samp_en_rst">
          <obj_property name="ElementShortName">samp_en_rst</obj_property>
          <obj_property name="ObjectShortName">samp_en_rst</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/adc_data_in">
+      <wvobject type="array" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/adc_data_in">
          <obj_property name="ElementShortName">adc_data_in[7:0]</obj_property>
          <obj_property name="ObjectShortName">adc_data_in[7:0]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/ev_start">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/ev_start">
          <obj_property name="ElementShortName">ev_start</obj_property>
          <obj_property name="ObjectShortName">ev_start</obj_property>
          <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/ev_startsingle">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/ev_startsingle">
          <obj_property name="ElementShortName">ev_startsingle</obj_property>
          <obj_property name="ObjectShortName">ev_startsingle</obj_property>
          <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/ev_stop">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/ev_stop">
          <obj_property name="ElementShortName">ev_stop</obj_property>
          <obj_property name="ObjectShortName">ev_stop</obj_property>
          <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/ev_stoptrig">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/ev_stoptrig">
          <obj_property name="ElementShortName">ev_stoptrig</obj_property>
          <obj_property name="ObjectShortName">ev_stoptrig</obj_property>
          <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/single_conv">
-         <obj_property name="ElementShortName">single_conv</obj_property>
-         <obj_property name="ObjectShortName">single_conv</obj_property>
-         <obj_property name="CustomSignalColor">#00FF00</obj_property>
-         <obj_property name="UseCustomSignalColor">true</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/trig_en">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/trig_en">
          <obj_property name="ElementShortName">trig_en</obj_property>
          <obj_property name="ObjectShortName">trig_en</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/data_reg">
+      <wvobject type="array" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/data_reg">
          <obj_property name="ElementShortName">data_reg[7:0]</obj_property>
          <obj_property name="ObjectShortName">data_reg[7:0]</obj_property>
          <obj_property name="CustomSignalColor">#0000A0</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/wait_pipeline_count">
+      <wvobject type="array" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/wait_pipeline_count">
          <obj_property name="ElementShortName">wait_pipeline_count[2:0]</obj_property>
          <obj_property name="ObjectShortName">wait_pipeline_count[2:0]</obj_property>
          <obj_property name="CustomSignalColor">#800080</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/wait_pipeline_done">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/wait_pipeline_done">
          <obj_property name="ElementShortName">wait_pipeline_done</obj_property>
          <obj_property name="ObjectShortName">wait_pipeline_done</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/wr_count">
+         <obj_property name="ElementShortName">wr_count[15:0]</obj_property>
+         <obj_property name="ObjectShortName">wr_count[15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#0000A0</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/sampling_size">
+         <obj_property name="ElementShortName">sampling_size[15:0]</obj_property>
+         <obj_property name="ObjectShortName">sampling_size[15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#0000A0</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
       <wvobject type="group" fp_name="group858">
          <obj_property name="label">FIFO reading</obj_property>
          <obj_property name="DisplayName">label</obj_property>
          <obj_property name="isExpanded"></obj_property>
-         <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/fifo_rd_en">
+         <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/fifo_rd_en">
             <obj_property name="ElementShortName">fifo_rd_en</obj_property>
             <obj_property name="ObjectShortName">fifo_rd_en</obj_property>
          </wvobject>
-         <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/fifo_half_empty">
+         <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/fifo_half_empty">
             <obj_property name="ElementShortName">fifo_half_empty</obj_property>
             <obj_property name="ObjectShortName">fifo_half_empty</obj_property>
          </wvobject>
-         <wvobject type="array" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/fifo_dout">
+         <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/fifo_empty">
+            <obj_property name="ElementShortName">fifo_empty</obj_property>
+            <obj_property name="ObjectShortName">fifo_empty</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/fifo_dout">
             <obj_property name="ElementShortName">fifo_dout[31:0]</obj_property>
             <obj_property name="ObjectShortName">fifo_dout[31:0]</obj_property>
          </wvobject>
@@ -309,47 +341,63 @@
          <obj_property name="label">FIFO writing</obj_property>
          <obj_property name="DisplayName">label</obj_property>
          <obj_property name="isExpanded"></obj_property>
-         <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/fifo_full">
+         <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/fifo_full">
             <obj_property name="ElementShortName">fifo_full</obj_property>
             <obj_property name="ObjectShortName">fifo_full</obj_property>
          </wvobject>
-         <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/fifo_wren">
+         <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/fifo_wren">
             <obj_property name="ElementShortName">fifo_wren</obj_property>
             <obj_property name="ObjectShortName">fifo_wren</obj_property>
          </wvobject>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/fifo_srst">
+         <obj_property name="ElementShortName">fifo_srst</obj_property>
+         <obj_property name="ObjectShortName">fifo_srst</obj_property>
       </wvobject>
    </wvobject>
    <wvobject type="group" fp_name="group526">
       <obj_property name="label">Clock generator</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="isExpanded"></obj_property>
-      <wvobject type="array" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_clk_gen/count">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_input/clk">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_clk_gen/count">
          <obj_property name="ElementShortName">count[15:0]</obj_property>
          <obj_property name="ObjectShortName">count[15:0]</obj_property>
          <obj_property name="CustomSignalColor">#008000</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_clk_gen/divisor">
+      <wvobject type="array" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_clk_gen/divisor">
          <obj_property name="ElementShortName">divisor[15:0]</obj_property>
          <obj_property name="ObjectShortName">divisor[15:0]</obj_property>
          <obj_property name="CustomSignalColor">#008000</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_clk_gen/clk_rst">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_clk_gen/clk_rst">
          <obj_property name="ElementShortName">clk_rst</obj_property>
          <obj_property name="ObjectShortName">clk_rst</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_clk_gen/flip">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_clk_gen/flip">
          <obj_property name="ElementShortName">flip</obj_property>
          <obj_property name="ObjectShortName">flip</obj_property>
+         <obj_property name="CustomSignalColor">#008080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_clk_gen/dclk">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_clk_gen/dclk">
          <obj_property name="ElementShortName">dclk</obj_property>
          <obj_property name="ObjectShortName">dclk</obj_property>
+         <obj_property name="CustomSignalColor">#008080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_clk_gen/dclk_out">
+         <obj_property name="ElementShortName">dclk_out</obj_property>
+         <obj_property name="ObjectShortName">dclk_out</obj_property>
          <obj_property name="CustomSignalColor">#FF00FF</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/tb_single_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_clk_gen/samp_en">
+      <wvobject type="logic" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/u_clk_gen/samp_en">
          <obj_property name="ElementShortName">samp_en</obj_property>
          <obj_property name="ObjectShortName">samp_en</obj_property>
          <obj_property name="CustomSignalColor">#00FF7F</obj_property>

@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xCF3FD619AA60F872",
+      "boundary_crc": "0xE0A0A1AF594C8DA7",
       "device": "xc7z020clg400-2",
       "name": "axi_vip_1",
       "synth_flow_mode": "Hierarchical",
@@ -20,9 +20,6 @@
       "aresetn": {
         "direction": "I"
       },
-      "adc_data": {
-        "direction": "I"
-      },
       "adc_clk": {
         "type": "clk",
         "direction": "O",
@@ -33,7 +30,7 @@
           },
           "FREQ_HZ": {
             "value": "100000000",
-            "value_src": "default_prop"
+            "value_src": "default"
           },
           "INSERT_VIP": {
             "value": "0",
@@ -44,6 +41,11 @@
             "value_src": "default"
           }
         }
+      },
+      "adc_data": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
       }
     },
     "components": {
@@ -653,7 +655,9 @@
             "direction": "O"
           },
           "adc_data": {
-            "direction": "I"
+            "direction": "I",
+            "left": "7",
+            "right": "0"
           }
         },
         "addressing": {
@@ -667,16 +671,16 @@
       }
     },
     "interface_nets": {
-      "axi_vip_m_M_AXI": {
-        "interface_ports": [
-          "axi_vip_m/M_AXI",
-          "axi_adc_v0_1_0/s_axi"
-        ]
-      },
       "axi_adc_v0_1_0_m_axi": {
         "interface_ports": [
           "axi_adc_v0_1_0/m_axi",
           "axi_vip_s/S_AXI"
+        ]
+      },
+      "axi_vip_m_M_AXI": {
+        "interface_ports": [
+          "axi_vip_m/M_AXI",
+          "axi_adc_v0_1_0/s_axi"
         ]
       }
     },
@@ -697,16 +701,16 @@
           "axi_adc_v0_1_0/aresetn"
         ]
       },
-      "adc_data_1": {
-        "ports": [
-          "adc_data",
-          "axi_adc_v0_1_0/adc_data"
-        ]
-      },
       "axi_adc_v0_1_0_adc_clk": {
         "ports": [
           "axi_adc_v0_1_0/adc_clk",
           "adc_clk"
+        ]
+      },
+      "adc_data_1": {
+        "ports": [
+          "adc_data",
+          "axi_adc_v0_1_0/adc_data"
         ]
       }
     },
