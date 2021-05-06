@@ -61,6 +61,7 @@ module tb_single_conv();
         wait (aresetn == 1'b1);
 
         #50ns
+        axi_adc_bis_reg(REG_CTL, (1 << REG_CTL_STOP_BIT), resp);
         axi_adc_read_reg(REG_CTL, data, resp);
 
         // ================ div=4, single ================
@@ -68,18 +69,21 @@ module tb_single_conv();
         axi_adc_bis_reg(REG_CTL, (1 << REG_CTL_START_BIT), resp);
 
         axi_adc_wait_idle();
+        axi_adc_read_reg(REG_DATA, data, resp);
 
         // ================ div=7, single ================
         axi_adc_write_reg(REG_CLK_DIV, 'd7, resp);
         axi_adc_bis_reg(REG_CTL, (1 << REG_CTL_START_BIT), resp);
 
         axi_adc_wait_idle();
+        axi_adc_read_reg(REG_DATA, data, resp);
 
         // ================ div=1, single ================
         axi_adc_write_reg(REG_CLK_DIV, 'd1, resp);
         axi_adc_bis_reg(REG_CTL, (1 << REG_CTL_START_BIT), resp);
 
         axi_adc_wait_idle();
+        axi_adc_read_reg(REG_DATA, data, resp);
         $stop();
     end
 

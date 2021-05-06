@@ -19,10 +19,10 @@
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
       <ZoomEndTime time="43490000001fs"></ZoomEndTime>
-      <Cursor1Time time="19470873000fs"></Cursor1Time>
+      <Cursor1Time time="24792724000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="220"></NameColumnWidth>
+      <NameColumnWidth column_width="216"></NameColumnWidth>
       <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="10" />
@@ -66,7 +66,6 @@
          <obj_property name="CellHeight">36</obj_property>
          <obj_property name="ElementShortName">s_axi</obj_property>
          <obj_property name="ObjectShortName">s_axi</obj_property>
-         <obj_property name="isExpanded"></obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/tb_repeat_conv/u_axi_vip/axi_vip_1_i/axi_adc_v0_1_0/inst/axi_adc_v0_1_S_AXI_inst/dst_addr_reg_out">
          <obj_property name="ElementShortName">dst_addr_reg_out[31:0]</obj_property>
