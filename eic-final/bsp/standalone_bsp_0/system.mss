@@ -6,6 +6,8 @@ BEGIN OS
  PARAMETER OS_NAME = standalone
  PARAMETER OS_VER = 6.7
  PARAMETER PROC_INSTANCE = CORTEXM3_AXI_0
+ PARAMETER stdin = axi_uartlite_0
+ PARAMETER stdout = axi_uartlite_0
 END
 
 
@@ -13,7 +15,7 @@ BEGIN PROCESSOR
  PARAMETER DRIVER_NAME = cpu_cortexm3
  PARAMETER DRIVER_VER = 1.0
  PARAMETER HW_INSTANCE = CORTEXM3_AXI_0
- PARAMETER extra_compiler_flags = -mcpu=cortex-m3 -Wall -Wextra -g
+ PARAMETER extra_compiler_flags = -mcpu=cortex-m3 -Wall -Wextra -g -march=armv6-m -mthumb
 END
 
 
