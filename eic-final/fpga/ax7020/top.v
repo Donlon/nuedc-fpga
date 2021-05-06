@@ -14,7 +14,10 @@ module top(
     output TDO,
     
     output [7:0] dac_data,
-    output       dac_clk
+    output       dac_clk,
+    
+    input [7:0]  adc_data,
+    output       adc_clk
 );
     wire mclk;
     wire clk_150M;
@@ -51,6 +54,9 @@ module top(
         .uart_txd(uart_txd),
         
         .dac_clk(dac_clk),
-        .dac_data(dac_data)
+        .dac_data(dac_data),
+        
+        .adc_clk(adc_clk),
+        .adc_data(adc_data)
     );
 endmodule
