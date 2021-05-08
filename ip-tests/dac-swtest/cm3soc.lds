@@ -2,7 +2,7 @@ MEMORY
 {
     ITCM       (RX) : ORIGIN = 0x00000000, LENGTH = 32k
     DTCM       (RW) : ORIGIN = 0x20000000, LENGTH = 32k
-    DATA_BRAM  (RW) : ORIGIN = 0x11000000, LENGTH = 32k
+    DATA_BRAM  (RW) : ORIGIN = 0x60000000, LENGTH = 32k
 }
 
 REGION_ALIAS("REGION_TEXT", ITCM);
@@ -87,4 +87,4 @@ SECTIONS {
     PROVIDE(__stack = __stack_top);
 }
 
-ENTRY(Reset_Handler)
+ENTRY(interruptVectors)

@@ -121,7 +121,5 @@ void System_Startup() {
 
 _Noreturn void Default_Handler(void) {
     /* Enter an infinite loop. */
-    while (1) {
-        asm volatile ("nop");
-    }
+    while (1);
 }

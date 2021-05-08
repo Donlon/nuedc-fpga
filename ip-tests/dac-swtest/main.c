@@ -3,51 +3,71 @@
 #include <xparameters.h>
 #include <xgpio.h>
 #include <axi_dac.h>
+#include <axi_adc.h>
 #include <math.h>
+
+#define AX7020_KEY2  (1 << 4) // GPIO4
+#define AX7020_KEY3  (1 << 3) // GPIO3
+#define AX7020_KEY4  (1 << 2) // GPIO2
+#define AX7020_LED1  (1 << 1) // GPIO1
+#define AX7020_LED2  (1 << 0) // GPIO0
+
+#define ADC_BASE     XPAR_AXI_ADC_0_S_AXI_BASEADDR
+#define DAC_BASE     XPAR_AXI_DAC_0_S_AXI_BASEADDR
 
 struct {
     int switch_test_mode: 1;
-} pending_events = {};
-
-int value = 0;
+} pendingEvents = {};
 
 typedef enum {
     IDLE,
-    TEST_REPEAT_MODE,
-    TEST_LOOP_MODE,
-    TEST_SINGLE_MODE,
+
+    TEST_DAC_SINGLE_MODE, // DAC 单次转换，重复，使用SysTick作为定时器
+    TEST_DAC_REPEAT_MODE, // DAC 重复模式，不循环
+    TEST_DAC_LOOP_MODE,   // DAC 循环模式
+
+    TEST_ADC_SINGLE,      // ADC 单次采样并用 DAC 输出
+    TEST_ADC_REPEAT,      // ADC 连续采样并用 DAC 输出
 } test_state_t;
 
 test_state_t state;
 
-int isUpMode = 1;
-
 XGpio gpio;   /* The driver instance for GPIO Device 0 */
 
-#define DAC_BUFFER_SIZE 512
+#define DAC_BUFFER_SIZE 4096
+#define ADC_FREQ_KHZ    30000 // 30000 kHz
 
 __section(".exdata")
-__aligned(32)
+__aligned(64)
 uint8_t dac_buffer[DAC_BUFFER_SIZE];
-
-void initDAC();
-
-int systick_init() {
-    return (int) SysTick_Config((uint32_t) (50e6 / 256000)); // 256 kHz
-}
 
 int gpio_init() {
     int status = XGpio_Initialize(&gpio, XPAR_AXI_GPIO_0_DEVICE_ID); // initialize GPIO
     if (status != XST_SUCCESS) {
         return status;
     }
-    XGpio_SetDataDirection(&gpio, 1, 0); // set GPIO direction
-    XGpio_DiscreteWrite(&gpio, 1, 0x2); // set GPIO output
+    XGpio_SetDataDirection(&gpio, 1, AX7020_KEY2 | AX7020_KEY3 | AX7020_KEY4); // set GPIO direction
+    XGpio_DiscreteWrite(&gpio, 1, AX7020_LED1); // LED1 off, LED2 on
 
+    XGpio_InterruptEnable(&gpio, XGPIO_IR_CH1_MASK); // Channel 1 interrupt enable
     XGpio_InterruptGlobalEnable(&gpio);
-    XGpio_InterruptEnable(&gpio, 0b011100); // 2, 3, 4: buttons
 
+    NVIC_ClearAllPendingIRQ();
     return status;
+}
+
+void initDAC() {
+    AXI_DAC_stopConversion(DAC_BASE);
+    uint8_t busy = 1;
+    while (busy) {
+        AXI_DAC_isBusy(DAC_BASE, &busy);
+    }
+    AXI_DAC_setOutputClockDivision(DAC_BASE, 150000 / ADC_FREQ_KHZ); // 50 / 1 MHz
+}
+
+void initADC() {
+    AXI_ADC_reset(ADC_BASE);
+    AXI_ADC_setSamplingClockDivision(ADC_BASE, 150000 / ADC_FREQ_KHZ);
 }
 
 int system_init() {
@@ -57,84 +77,102 @@ int system_init() {
         return status;
     }
     initDAC();
+    initADC();
     return status;
 }
 
 void buildDACBuffer() {
-#if 0
+#if 1
+    const float max = 255;
     for (int i = 0; i < DAC_BUFFER_SIZE; i++) {
-        dac_buffer[i] = (uint8_t) floorf(127.5f
-                                         - 127.5f * sinf((float) ((float) i * 2.f * M_PI / (float) DAC_BUFFER_SIZE)));
+        float phase = (float) ((float) i * 2.f * M_PI / DAC_BUFFER_SIZE);
+        dac_buffer[i] = (uint8_t) floorf(max * (1.f - sinf(phase) / 2.f));
     }
-#else
-    for (int i = 0; i < DAC_BUFFER_SIZE / 2; i++) {
-        dac_buffer[i] = i;
-        dac_buffer[DAC_BUFFER_SIZE - (i + 1)] = i;
+#elif 0
+    for (int i = 0; i < DAC_BUFFER_SIZE; i++) {
+        dac_buffer[i] = rand() & 255;
+        // dac_buffer[i] = i;
     }
 #endif
 }
 
 void startRepeatMode(int loop) {
-    AXI_DAC_setDacClockDivision((void *) XPAR_AXI_DAC_0_S_AXI_BASEADDR, 1); // 1 MHz
     if (loop) {
-        AXI_DAC_startSequenceConversionLooped((void *) XPAR_AXI_DAC_0_S_AXI_BASEADDR,
-                                              dac_buffer,
-                                              sizeof(dac_buffer));
+        AXI_DAC_startSequenceConversionLooped(DAC_BASE, dac_buffer, sizeof(dac_buffer));
     } else {
-        AXI_DAC_startSequenceConversion((void *) XPAR_AXI_DAC_0_S_AXI_BASEADDR,
-                                        dac_buffer,
-                                        sizeof(dac_buffer));
+        AXI_DAC_startSequenceConversion(DAC_BASE, dac_buffer, sizeof(dac_buffer));
     }
 }
 
-void stopRepeatMode() {
-    AXI_DAC_stopConversion((void *) XPAR_AXI_DAC_0_S_AXI_BASEADDR);
-}
-
-void initDAC() {
-    AXI_DAC_stopConversion((void *) XPAR_AXI_DAC_0_S_AXI_BASEADDR);
-    uint8_t busy = 1;
-    while (busy) {
-        AXI_DAC_isBusy((void *) XPAR_AXI_DAC_0_S_AXI_BASEADDR, &busy);
-    }
+uint8_t adcSingleConv() {
+    AXI_ADC_convertSingle(ADC_BASE);
+    AXI_ADC_waitIdle(ADC_BASE);
+    return AXI_ADC_getDataReg(ADC_BASE);
 }
 
 void main_loop() {
     while (1) {
-        if (pending_events.switch_test_mode) {
-            switch (state) {
+        if (pendingEvents.switch_test_mode) {
+            switch (state) { // last state
                 default:
                 case IDLE:
-                    state = TEST_REPEAT_MODE;
+                    state = TEST_DAC_REPEAT_MODE;
                     break;
-                case TEST_REPEAT_MODE:
-                    state = TEST_LOOP_MODE;
+                case TEST_DAC_REPEAT_MODE:
+                    buildDACBuffer();
+                    AXI_DAC_stopConversion(DAC_BASE);
+                    state = TEST_DAC_LOOP_MODE;
                     break;
-                case TEST_LOOP_MODE:
-                    state = TEST_SINGLE_MODE;
+                case TEST_DAC_LOOP_MODE:
+                    AXI_DAC_stopConversion(DAC_BASE);
+                    state = TEST_DAC_SINGLE_MODE;
                     break;
-                case TEST_SINGLE_MODE:
-                    state = IDLE;
+                case TEST_DAC_SINGLE_MODE:
                     SysTick->CTRL = 0; // disable SysTick
+                    state = TEST_ADC_SINGLE;
+                    break;
+                case TEST_ADC_SINGLE:
+                    state = TEST_ADC_REPEAT;
+                    break;
+                case TEST_ADC_REPEAT:
+                    state = IDLE;
                     break;
             }
-            stopRepeatMode();
-            switch (state) {
+            switch (state) { // next state
                 default:
                 case IDLE:
                     break;
-                case TEST_LOOP_MODE:
+                case TEST_DAC_LOOP_MODE:
                     startRepeatMode(0);
                     break;
-                case TEST_REPEAT_MODE:
+                case TEST_DAC_REPEAT_MODE:
                     startRepeatMode(1);
                     break;
-                case TEST_SINGLE_MODE:
+                case TEST_DAC_SINGLE_MODE:
                     SysTick_Config((uint32_t) (50e6 / 256000)); // 256 kHz
                     break;
             }
             // Switch test mode
-            pending_events.switch_test_mode = 0;
+            pendingEvents.switch_test_mode = 0;
+
+            switch (state) {
+                case TEST_ADC_SINGLE:
+                    while (!pendingEvents.switch_test_mode) {
+                        AXI_ADC_waitIdle(ADC_BASE);
+                        AXI_ADC_startSequentialConversion(ADC_BASE, dac_buffer, sizeof(dac_buffer));
+                        AXI_ADC_waitIdle(ADC_BASE);
+                        AXI_DAC_startSequenceConversion(DAC_BASE, dac_buffer, sizeof(dac_buffer));
+                    }
+                    break;
+                case TEST_ADC_REPEAT:
+                    while (!pendingEvents.switch_test_mode) {
+                        uint8_t v = adcSingleConv();
+                        AXI_DAC_convertSingle(DAC_BASE, v);
+                    }
+                    break;
+                default:
+                    break;
+            }
         } else {
             // no pending events and wait for interrupt
             __WFI();
@@ -147,25 +185,16 @@ int main() {
     if (init_status != XST_SUCCESS) {
         while (1);
     }
-    buildDACBuffer();
-
-#if 0
-    startRepeatMode(0);
-#else
-    startRepeatMode(1);
-#endif
-
-#if 0
-    state = TEST_SINGLE_MODE;
-#endif
 
     main_loop();
 }
 
 void SysTick_Handler() {
-    if (state == TEST_SINGLE_MODE) {
+    static int isUpMode = 1;
+    static int value = 0;
+    if (state == TEST_DAC_SINGLE_MODE) {
         // Output a 0.5 kHz/256 kSps triangle wave
-        AXI_DAC_convertSingle((void *) XPAR_AXI_DAC_0_S_AXI_BASEADDR, value);
+        AXI_DAC_convertSingle(DAC_BASE, value);
         if (isUpMode) {
             if (value >= 255) {
                 value--;
@@ -185,6 +214,6 @@ void SysTick_Handler() {
 }
 
 void GPIO_Handler() {
-    pending_events.switch_test_mode = 1;
+    pendingEvents.switch_test_mode = 1;
     while (1);
 }
