@@ -1,5 +1,6 @@
 #include <cm3soc/cm3soc.h>
-
+#include "lcd.h"
+#include "lcd_canvas.h"
 #include <xparameters.h>
 #include <xgpio.h>
 
@@ -7,47 +8,19 @@ int value = 1;
 
 XGpio gpio;   /* The driver instance for GPIO Device 0 */
 
-int systick_init() {
-    return SysTick_Config(50e6 / 4); // 4 Hz
-}
-
-int gpio_init() {
-    int status = XGpio_Initialize(&gpio, XPAR_AXI_GPIO_0_DEVICE_ID); // initialize GPIO
-    if (status != XST_SUCCESS) {
-        return status;
-    }
-    XGpio_SetDataDirection(&gpio, 1, 0); // set GPIO direction
-    XGpio_DiscreteWrite(&gpio, 1, 0x2); // set GPIO output
-
-    return status;
-}
-
-int system_init() {
-    int status;
-    status = systick_init();
-    if (status != XST_SUCCESS) {
-        return status;
-    }
-    status = gpio_init();
-    if (status != XST_SUCCESS) {
-        return status;
-    }
-    return status;
+void paint_header() {
+    lcd_draw_text_6px(128 - 8 * 6 - 8, 0, "2021F102");
 }
 
 int main() {
-    int status = system_init();
+    int status = lcd_init();
+    lcd_clear();
     if (status != XST_SUCCESS) {
         while (1);
+    }
+    while (1){
+      paint_header();
     }
     return 0;
 }
 
-void SysTick_Handler() {
-    if (value & 1) {
-        XGpio_DiscreteWrite(&gpio, 1, 0b01);
-    } else {
-        XGpio_DiscreteWrite(&gpio, 1, 0b10);
-    }
-    value++;
-}

@@ -2,7 +2,7 @@
 set(BSP_DIRECTORY "${PROJECT_SOURCE_DIR}/eic-final/bsp/standalone_bsp_0/CORTEXM3_AXI_0/")
 
 add_executable(eic-final
-        main.c startup.c sys_irq_handlers.c)
+        main.c startup.c sys_irq_handlers.c lcd.c lcd_canvas.c main.h gpio.c)
 
 target_include_directories(eic-final PRIVATE ${BSP_DIRECTORY}/include)
 target_include_directories(eic-final PRIVATE CMSIS/Include)
