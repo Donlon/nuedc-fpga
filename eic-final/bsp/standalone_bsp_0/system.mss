@@ -15,7 +15,7 @@ BEGIN PROCESSOR
  PARAMETER DRIVER_NAME = cpu_cortexm3
  PARAMETER DRIVER_VER = 1.0
  PARAMETER HW_INSTANCE = CORTEXM3_AXI_0
- PARAMETER extra_compiler_flags = -mcpu=cortex-m3 -Wall -Wextra -g -march=armv6-m -mthumb
+ PARAMETER extra_compiler_flags = -mcpu=cortex-m3 -Wall -Wextra -g
 END
 
 

@@ -1,9 +1,5 @@
 
 set(BSP_DIRECTORY "${PROJECT_SOURCE_DIR}/eic-final/bsp/standalone_bsp_0/CORTEXM3_AXI_0/")
-file(GLOB_RECURSE bsp_sources ${BSP_DIRECTORY}/libsrc/*.c)
-
-add_library(xil ${bsp_sources})
-target_include_directories(xil PRIVATE ${BSP_DIRECTORY}/include)
 
 add_executable(dac-swtest
         main.c startup.c sys_irq_handlers.c)
@@ -13,7 +9,7 @@ target_include_directories(dac-swtest PRIVATE CMSIS/Include)
 target_include_directories(dac-swtest PRIVATE CMSIS/Device/Include)
 
 target_link_libraries(dac-swtest PRIVATE m)
-target_link_libraries(dac-swtest PRIVATE xil)
+target_link_libraries(dac-swtest PRIVATE eic_final_bsp)
 
 target_link_options(dac-swtest PRIVATE
         --specs=nano.specs
